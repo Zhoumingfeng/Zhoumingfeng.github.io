@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>翻页效果</title>
+	<style>
+     *{margin: 0;padding: 0;}
+     body{overflow: hidden;background: #000;}
+     #box{z-index: 0;
+	     	width: 900px;
+	     	height: 600px;
+		    position: relative;
+		    margin: 20px auto;
+		    background: url(img/0.jpg) no-repeat;
+		    transform-style: preserve-3d;
+		    box-shadow: 0 0 0 10px #ccc;}
+     .page1{width: 50%;height:100%;
+	     	position: absolute;
+	     	top: 0;right: 0;
+	     	transform-style:preserve-3d
+	     	;transform-origin:0 50%;
+	     	tranform:perspective(800px) rotateY(0deg);
+			transition:1s all ease;
+	     }
+     .front{transform: translateZ(1px);
+			backface-visibility: hidden;
+			width: 100%;height: 100%;
+			position: absolute;
+			left: 0;top: 0;
+			background: url(img/0.jpg) no-repeat;
+			background-position:right top;}
+     .back{width: 100%;height: 100%;
+	     	position: absolute;
+	     	left: 0;top: 0;
+	     	background: url(img/1.jpg) no-repeat;
+	     	background-position: left top;
+	     	transform: translateZ(-1px) scale(-1,1);}
+     .page2{width: 50%;height: 100%;
+			position: absolute;
+			right: 0;top: 0;
+			background: url(img/1.jpg) no-repeat;
+			background-position:right top;}
+
+
+	#box:active .page1{
+		transform:perspective(800px) rotateY(-180deg);
+	}
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){
+		var oBox=document.querySelector('#box');
+		var oPage1=document.querySelector('.page1');
+		var oPage2=document.querySelector('.page2')
+		var oFront=document.querySelector('.front')
+		var oBack=document.querySelector('.back')
+        
+		var iNow=0;
+		var bReady=true;
+		oBox.onclick=function(){
+			if(!bReady)return;
+			bReady=false;
+			iNow++;
+			oPage1.style.transition=".5s all ease";
+			oPage1.style.transform="perspective(800px) rotateY(-180deg)";
+		}
+		oPage1.addEventListener("transitionend",function(){
+			bReady=true;
+			oPage1.style.transition="none";
+
+			oPage1.style.transform="perspective(800px) rotateY(0deg)";
+
+			oBox.style.backgroundImage="url(img/"+iNow%6+".jpg)";
+			oFront.style.backgroundImage="url(img/"+iNow%6+".jpg)";
+			oBack.style.backgroundImage="url(img/"+(iNow+1)%6+".jpg)";
+			oPage2.style.backgroundImage="url(img/"+(iNow+1)%6+".jpg)";
+		},false)
+	}
+
+	</script>
+</head>
+<body>
+<div id="box">
+	<div class="page1">
+		<div class="front"></div>
+		<div class="back"></div>
+	</div>
+	<div class="page2"></div>
+</div>
+</body>
+</html>

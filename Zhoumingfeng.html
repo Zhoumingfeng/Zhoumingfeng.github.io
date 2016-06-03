@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>个人网站</title>
+<style>
+	*{margin: 0;padding: 0;list-style: none;}
+	html,body{width: 100%;height: 100%;background: url(img/6.jpg);background-size: 100% 100%;overflow: hidden;}
+	#werp{ width:100%;margin: 10px auto;}
+
+	.werp_l{width:13.3%;height: 100%;background: url(img/0.jpg) no-repeat;background-size: 100% 100%;position: fixed;left: 0;top: 0; }
+	.werp_r{width:13.3%;height: 100%;background: url(img/0.jpg) no-repeat;background-size: 100% 100%;position: fixed;right: 0;top: 0; }
+
+	#header{width: 1000px;height: 50px;margin: 0px auto;position: fixed;left: 50%;top:15px;margin-left: -500px;z-index: 99;border: 1px solid #dfe710;box-shadow: 0 0 10px 5px #dfe710;overflow: hidden;}
+	#header input{float: left;width: 25%; height: 50px;font-size: 20px;text-align: center;line-height: 50px;font-weight: bold;background: url(img/4.png) no-repeat #ffc7a0;background-size: 99% 90%;opacity: .9;border-radius: 20px;}
+	#header li{width: 25%;height: 50px;background:#dfe710;position:absolute; left: 0;top: 0;opacity:.5;border-radius: 20px; }
+
+	#box{width: 1000px;position: relative;left: 50%;top:65px;margin-left: -500px;}
+	/*#box div{display: none;}*/
+	.home,.resume,.works,.production{width: 1000px;height: 665px;border: 1px solid #dfe710;box-shadow: 0 0 10px 5px #dfe710;}
+	
+	.home img{width: 100%;height: 590px;}
+	.verse{width: 470px;height: 400px;position: absolute;left: 240px;top:50px; }
+	.verse li{width: 40px;height: 260px;margin: 5px;float: left;border: 1px solid #ccc;box-shadow: 0 0 25px 10px #827979;text-align: center;}
+	.verse li span{color:#827979; font-weight: bold; font-size: 30px; transition:1s all linear;text-shadow:0px 0px 50px #827979;opacity: 0;line-height: 30px;}
+	.verse li span.on{text-shadow:0px 0px 0px #827979;opacity: 1;}
+	.feel{width: 470px;height: 165px;position: absolute;left: 230px;top:370px;color:#827979; font-weight: bold;font-size: 15px;}
+
+	.resume{width: 1000px;height: 665px}
+	
+	.works{background:rgba(17,193,225,.5);}
+	
+	.production{width: 1000px;height: 665px}
+	.works_box{width: 100%;height: 590px;}
+	.works_box_ul{width:95%;height: 80%;margin-left:2.5%; }
+	.works_box_ul li{width: 200px;height:200px;float: left;background: blue;margin: 11px 14px;position: relative; overflow: hidden;border: 2px solid #11e129;box-shadow: 0 0 10px 5px #11e129;}
+	.works_box_ul li img{width: 200px;height: 200px;}
+	.works_box_ul li span{width: 200px;height: 200px;font-size: 30px;text-align: center;line-height: 200px;background:#dfe710;opacity: .5;position: absolute;left: -200px;top:0; }
+	.works_box_ol{width: 30%;height: 10%;position: relative;left: 50%;top: 3%; margin-left: -15%;}
+	.works_box_ol li{float: left;width:50px;height: 50px;margin-right: 23px;margin-bottom: 5px; background: #11e129;border-radius: 50%;font-size: 30px;text-align: center;line-height: 50px;cursor: pointer;border: 1px solid #11e129;box-shadow: 0 0 10px 5px #11e129;}
+
+
+</style>
+<script src="canvas.js"></script>
+<script src="elastic.js"></script>
+<script type="text/javascript">
+	function rnd(n,m){
+		return parseInt(Math.random()*(m-n))+n;	
+	};
+	function d2a(n){
+		return n*Math.PI/180;
+	};
+	function toDou(n){
+        return n<10?'0'+n:''+n;
+    };
+	window.onload=function(){
+		var oHeader=document.querySelector('#header');
+		var aBtn=oHeader.querySelectorAll('input');
+		var oFly=oHeader.querySelector('li');
+		var oBox=document.querySelector('#box');
+		var oHome=oBox.querySelector('.home');
+		var oH=oHome.offsetHeight;
+		for(var i=0;i<aBtn.length;i++){
+     		;(function(index){
+     			aBtn[i].onclick=function(){  
+     				elastic(oFly,this.offsetLeft);			
+          			for(var i=0;i<aBtn.length;i++){
+          				
+          				oBox.style.top=-(oH*i-65)+'px'; 
+          			}
+     			
+     			oBox.style.top=-(oH*index-65)+'px';
+     		     }
+     		})(i);
+     	}
+		
+		// C2();
+		// C1();
+		// Home();
+		function Home(){
+			var aLi=document.querySelectorAll('.verse li')
+			var arr=['秋风瑟瑟百花愁 ，','唯有明月挂枝头 。','青衫寒剑坐独亭 ，','浊酒一杯醉心扉 。','举杯望月寒如雪 ，','低头抚剑望解忧 。','寄月空传相思苦 ，','明月千里传思情 。','| 月思'];
+			
+
+			function add(obj,arr){
+				for (var i = 0; i < arr.length; i++) {
+					var oSpan=document.createElement("span");
+					oSpan.innerHTML=arr[i];
+					obj.appendChild(oSpan);
+				};
+				var count=0;
+				var aSpan=obj.children;
+				var timer=setInterval(function(){
+					aSpan[count].className="on";
+					count++;
+					if(count==arr.length){
+						clearInterval(timer);
+					};
+				},100)
+			};
+			var iNow=0;
+			var timer=setInterval(function(){
+				add(aLi[iNow],arr[iNow])
+				iNow++;
+				if(iNow==aLi.length){
+					clearInterval(timer);
+				};
+			},1000)
+
+		}
+		
+	};	
+</script>
+</head>
+<body>
+<div id="werp">
+	<section class="werp_l">
+		<canvas id='c1'>
+			<span>抱歉您的浏览器不支持 canvas 请升级浏览器</span>
+		</canvas>
+	</section>
+	<section class="werp_r">
+		<canvas id='c2'>
+			<span>抱歉您的浏览器不支持 canvas 请升级浏览器</span>
+		</canvas>
+	</section>
+	<header id='header'>
+	<input type="button" value="首页">
+	<input type="button" value="个人介绍">
+	<input type="button" value="作品展示">
+	<input type="button" value="个性作品">
+	<li></li>
+	</header>
+	<div id="box">
+		<div class="home">
+		    <li><img src="img/1.png" alt=""></li>
+			<ul class="verse"><!--定时添加文字-->
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<ul class="feel">
+				<p>
+					“人生和爱情一样，错过了爱情就错过了人生”。爱情是什么？让人无所适从，让人神魂颠倒，面对爱情的时候，勇敢一点，大胆说出自己的爱，有花堪摘直须摘，莫待无花空折枝。人，总会生老病死，怎么过都是一生，错过了爱情就错过了生命的精彩。
+				</p>
+				<p>
+					“人生两大悲剧：一是万念俱灰，一是踌躇满志”。现代的人好象特别脆弱，报纸上天天报道众多名人得抑郁症，这些人一定是从一个极端走向别一个极端。正因为踌躇满志，才坚信自已是完美的，是无所不能的，如果受到一点挫折，就会变得极度自卑，甚至失去继续生活的勇气。为自己找一个准确的定位，享受生活乐趣。
+				</p>
+				
+			</ul>
+		</div>
+		<div class="resume">
+			
+		</div>
+		<div class="works"  >
+			<section class='works_box'>
+				<ul class='works_box_ul'>
+					<li>
+						<a href="branch/beckon.html" target="_blank"><img src="img/b2.jpg" alt=""></a>
+						<span>爆炸效果</span>
+					</li>
+					<li>
+						<a href="branch/flip.html" target="_blank"><img src="img/2.jpg" alt=""></a>
+						<span>翻页相册</span>
+					</li>
+					<li>
+						<a href="branch/pubu.html" target="_blank"><img src="" alt=""></a>
+						<span>无限加载</span>
+					</li>
+					<li>
+						<a href="branch/yanchi.html"><img src="img/img2.jpg" alt=""></a>
+						<span>延迟加载</span>
+					</li>
+					<li>
+						<a href="branch/beckon.html" target="_blank"><img src="" alt=""></a>
+						<span>爆炸效果</span>
+					</li>
+					<li>
+						<a href="branch/beckon.html" target="_blank"><img src="" alt=""></a>
+						<span>爆炸效果</span>
+					</li>
+					<li>
+						<a href="branch/beckon.html" target="_blank"><img src="" alt=""></a>
+						<span>爆炸效果</span>
+					</li>
+					<li>
+						<a href="branch/beckon.html" target="_blank"><img src="" alt=""></a>
+						<span>爆炸效果</span>
+					</li>
+				</ul>
+				<ol class="works_box_ol">
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+				</ol>
+			
+			</section>
+
+			
+		</div>
+		<div class="production" >
+			
+		</div>
+		
+	</div>
+	
+</div>	
+</body>
+</html>

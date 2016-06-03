@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	img{width: 500px;height: 700px;margin-left: 400px;}
+	</style>
+	<script type="text/javascript">
+	function getPos(obj){
+		var l=0;
+		var t=0;
+		while(obj){
+			l+=obj.offsetLeft
+			t+=obj.offsetTop;
+			obj=obj.offsetParent;
+		}
+		return {left:l,top:t}
+	}
+	window.onscroll=window.onload=function(){
+		var aImg=document.getElementsByTagName('img');
+		
+			var scrollT=document.documentElement.scrollTop||document.body.scrollTop;
+			var clientH=document.documentElement.clientHeight;
+			var scrollBottom=scrollT+clientH;
+			for(var i=0;i<aImg.length;i++){
+				var aImgH=getPos(aImg[i]).top;
+				if(scrollBottom>=aImgH){
+					aImg[i].src=aImg[i].getAttribute('_src');
+				}
+			}
+		
+	}
+	</script>
+</head>
+<body>
+<img _src="img/img1.jpg" alt="">
+<img _src="img/img2.jpg" alt="">
+<img _src="img/img3.jpg" alt="">
+<img _src="img/img4.jpg" alt="">
+<img _src="img/img5.jpg" alt="">
+<img _src="img/img6.jpg" alt="">
+<img _src="img/img7.jpg" alt="">
+<img _src="img/img8.jpg" alt="">
+<img _src="img/img9.jpg" alt="">
+	
+</body>
+</html>
