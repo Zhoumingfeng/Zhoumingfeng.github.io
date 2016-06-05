@@ -41,8 +41,8 @@
 
 
 </style>
-<script src="canvas.js"></script>
-<script src="elastic.js"></script>
+<script type="text/javascript" src="canvas.js"></script>
+<script type="text/javascript" src="elastic.js"></script>
 <script type="text/javascript">
 	function rnd(n,m){
 		return parseInt(Math.random()*(m-n))+n;	
@@ -54,29 +54,33 @@
         return n<10?'0'+n:''+n;
     };
 	window.onload=function(){
-		var oHeader=document.querySelector('#header');
-		var aBtn=oHeader.querySelectorAll('input');
-		var oFly=oHeader.querySelector('li');
-		var oBox=document.querySelector('#box');
-		var oHome=oBox.querySelector('.home');
-		var oH=oHome.offsetHeight;
-		for(var i=0;i<aBtn.length;i++){
-     		;(function(index){
-     			aBtn[i].onclick=function(){  
-     				elastic(oFly,this.offsetLeft);			
-          			for(var i=0;i<aBtn.length;i++){
-          				
-          				oBox.style.top=-(oH*i-65)+'px'; 
-          			}
-     			
-     			oBox.style.top=-(oH*index-65)+'px';
-     		     }
-     		})(i);
-     	}
+		function Box(){
+			var aBtn=document.querySelectorAll('input');
+			var oFly=document.querySelector('li');
+			var oBox=document.querySelector('#box');
+			var oHome=document.querySelector('.home');
+			var oH=oHome.offsetHeight;
+			for(var i=0;i<aBtn.length;i++){
+	     		;(function(index){
+	     			aBtn[i].onclick=function(){  
+	     				elastic(oFly,this.offsetLeft);			
+	          			for(var i=0;i<aBtn.length;i++){
+	          				
+	          				oBox.style.top=-(oH*i-65)+'px'; 
+	          			}
+	     			
+	     			oBox.style.top=-(oH*index-65)+'px';
+	     		     }
+	     		})(i);
+	     	}
+
+		}
+		
 		
 		C2();
 		C1();
 		Home();
+		Box();
 		function Home(){
 			var aLi=document.querySelectorAll('.verse li')
 			var arr=['秋风瑟瑟百花愁 ，','唯有明月挂枝头 。','青衫寒剑坐独亭 ，','浊酒一杯醉心扉 。','举杯望月寒如雪 ，','低头抚剑望解忧 。','寄月空传相思苦 ，','明月千里传思情 。','| 月思'];
@@ -213,4 +217,5 @@
 	
 </div>	
 </body>
+
 </html>
