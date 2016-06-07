@@ -1,0 +1,71 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*六楼开始*/
+.wzxsport{width:100%; min-width:987px; height:607px;}
+.wzxsport1{width:438px; height:35px; border-bottom:1px solid #c81623; position:relative;}
+.wzxsport1 a{width:31px; height:25px; display:block; position:absolute; left:0; top:1px; font-size:11px; text-align:center; line-height:30px; color:#fff; background:url(../img/wzxfloor.png) no-repeat 0 0;}
+.wzxsport1 h4{font-size:19px; color:#323232; position:absolute; left:40px; top:5px; font-weight:bold;}
+.wzxsport2{width:490px; height:24px; border-top:1px solid #ededed; border-bottom:1px solid #c81623; padding-top:10px;}
+.wzxsport2 li{float:right; padding:0 16px; border-left:1px solid #ccc; }
+.wzxsport2 li a{font-size:11px; color:#666;}
+.wzxsport2 li.wzxsport3{border-left:none;}
+.wzxsport4{width:57px; height:33px; border-left:1px solid #c81623; border-right:1px solid #c81623; border-top:3px solid #c81623; color:#c81623; font-size:11px; text-align:center; line-height:33px;}
+.wzxsport7{height:475px; margin-bottom:10px;}
+.wzxsport7 .wzxsport8 img{border-bottom:1px solid #ededed;}
+.wzxsport7 a{ display:block;}
+.wzxsport7 .wzxsport9 img{border-bottom:1px dotted #cbcbcb;}
+.wzxsport-bottom{height:40px; background:#f7f7f7; padding:13px 0; margin-bottom:21px;}
+.wzxsport-bottom img{width:100px; height:40px;}
+.wzxsport-bottom a{display:inline-block; width:117px; height:40px;border-right:1px dotted #ccc; }
+.wzxsport-bottom a.wzxsport-bottom1{border-right:none;}
+.wzxsport7 .wzxsportleft{ position:relative;}
+.wzxsport7 .wzxsportleft .wzxsporimg{ position:absolute; top:0; left:0;}
+.wzxsport7 .wzxsport-left{width:210px; height:92px; background:#f6dfdf; position:absolute; left:0; top:237px;}
+.wzxsport7 .wzxsport-left div{width:105px; height:46px; position:relative;}
+.wzxsport7 .wzxsport-left div span{width:26px; height:26px; display:inline-block; position:absolute; left:10px; top:10px;}
+.wzxsport7 .wzxsport-left .wzxsport-left1{ background:url(../img/sportsicon.png) no-repeat 0 0;} 
+.wzxsport7 .wzxsport-left .wzxsport-left2{ background:url(../img/sportsicon.png) no-repeat 0 -26px;} 
+.wzxsport7 .wzxsport-left .wzxsport-left3{ background:url(../img/sportsicon.png) no-repeat 0 -52px;} 
+.wzxsport7 .wzxsport-left .wzxsport-left4{ background:url(../img/sportsicon.png) no-repeat 0 -78px;} 
+.wzxsport7 .wzxsport-left div a{ display:inline-block; font-size:13px; color:#666; font-weight:bold; position:absolute; left:40px;top:16px;}
+.wzxsport7 .wzxsport-left5{ position:absolute; left:25px; top:356px;}
+.wzxsport7 .wzxsport-left5 a{ font-size:14px; line-height:25px; color:#666; font-weight:bold;}
+.wzxsportleft .wzxsport-left6 {width:162px; height:60px; position:absolute; left:24px; top:406px;}
+.wzxsportleft .wzxsport-left6 li{ float:left; margin-right:10px;}
+.wzxsportleft .wzxsport-left6 li a{ display:inline-block; font-size:11px; color:#666; line-height:23px;}
+.wzxsportleft .wzxsport-left6 li a.wzxsport-left7{color:#d50000;}
+.wzxsport7 .wzxsport9 .wzxsportnum{ width:339px; height:236px; position:relative;}
+.wzxsport7 .wzxsport9 .wzxsportnum img{ position:absolute; top:0; left:0;}
+.wzxsport7 .wzxsport9 .wzxsportnum p {width:80px; height:14px; position:absolute; left:50%; margin-left:-40px; bottom:9px;}
+.wzxsport7 .wzxsport9 .wzxsportnum p a{width:8px; height:8px; background:#3e3e3e; border-radius:50%; margin-right:6px; display:inline-block;}
+.wzxsport7 .wzxsport9 .wzxsportnum p a:hover{ background:#b61b1f;}
+.wzxsport9 .wzxcenter{ position:relative;}
+.wzxsport9 .wzxcenter .wzxleft,.wzxsport9 .wzxcenter .wzxright{width:28px; height:62px; background:rgba(0,0,0,0.5); font-size:20px; color:#fff; text-align:center; line-height:62px; position:absolute; top:50%; margin-top:-31px;}
+.wzxsport9 .wzxcenter .wzxleft{left:0;}
+.wzxsport9 .wzxcenter .wzxright{right:0;}
+/*六楼结束*/
+
+.wzxsport7 .wzxsport-left.wzxjia{ background:#f6f5df;}
+.wzxsport7 .wzxsport-left .wzxjia1{ background:url(../img/livingsicon.png) no-repeat 0 0;} 
+.wzxsport7 .wzxsport-left .wzxjia2{ background:url(../img/livingsicon.png) no-repeat 0 -26px;} 
+.wzxsport7 .wzxsport-left .wzxjia3{ background:url(../img/livingsicon.png) no-repeat 0 -52px;} 
+.wzxsport7 .wzxsport-left .wzxjia4{ background:url(../img/livingsicon.png) no-repeat 0 -78px;} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

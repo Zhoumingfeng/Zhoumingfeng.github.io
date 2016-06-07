@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>捕鱼小游戏</title>
+<style>
+	*{ padding:0; margin:0; list-style:none;}
+	body{ background:#000; text-align:center;}
+	canvas{ background:url(img/game_bg_2_hd.jpg) no-repeat;}
+	
+</style>
+<script src="js/com.js"></script>
+<script src="js/resource.js"></script>
+<script src="js/fish.js"></script>
+<script src="js/cannon.js"></script>
+<script src="js/bullet.js"></script>
+<script src="js/diefish.js"></script>
+<script src="js/coin.js"></script>
+<script>
+	window.onload=function(){
+		var oC=document.querySelector('#oc');
+		var gd=oC.getContext('2d');
+		
+			
+		var out=50;
+		
+		loadImage(resource,function(){
+			
+			
+			//保存鱼
+			var arrFish=[];
+			
+			//存放炮弹
+			var arrBullet=[];
+			
+			//存死鱼
+			var arrDieFish=[];
+			
+			//存金币
+			var arrCoin=[];
+			
+			
+			//画炮
+			var oCn=new Cannon(5);
+			
+			setInterval(function(){
+				gd.clearRect(0,0,oC.width,oC.height);
+				
+				
+				//出鱼规则 
+				if(Math.random()<0.05){
+					//生鱼
+					var f1=new Fish(rnd(1,6));
+					if(Math.random()>0.5){
+						f1.x=-out;
+						f1.rotate=rnd(-45,45);
+					}else{
+						f1.x=oC.width+out;
+						f1.rotate=rnd(135,225);
+					}	
+					f1.y=rnd(100,oC.height-100);
+					arrFish.push(f1);
+				}
+				
+				//画鱼
+				for(var i=0; i<arrFish.length;i++){
+					arrFish[i].draw(gd);
+				}
+				
+				//画死鱼
+				for(var i=0; i<arrDieFish.length;i++){
+					arrDieFish[i].draw(gd);
+				}
+				
+				//画金币
+				for(var i=0; i<arrCoin.length;i++){
+					arrCoin[i].draw(gd);
+				}
+				
+				//画炮台
+				gd.drawImage(JSON['bottom'],
+					0,0,765,71,
+					0,oC.height-71,765,71
+				);
+				
+				oCn.draw(gd);
+			
+				//画炮弹：
+				for(var i=0; i<arrBullet.length;i++){
+					arrBullet[i].draw(gd);
+				}
+				
+				
+				
+				
+				
+				//碰撞检测
+				for(var i=0; i<arrFish.length;i++){
+					for(var j=0; j<arrBullet.length;j++){
+						if(arrFish[i].isIn(arrBullet[j].x,arrBullet[j].y)){
+							
+							//存死鱼 的信息
+							var type=arrFish[i].type;
+							var x=arrFish[i].x;
+							var y=arrFish[i].y;
+							var rotate=arrFish[i].rotate;
+							
+							var dieFish=new DieFish(type);
+							dieFish.x=x;
+							dieFish.y=y;
+							dieFish.rotate=rotate;
+							
+							//存死鱼
+							arrDieFish.push(dieFish);
+							
+							
+							//加金币声音
+							dieFish.song();
+							
+							//过一会死鱼消失
+							setTimeout(function(){
+								arrDieFish.shift();
+							},300);
+							
+							//鱼死
+							arrFish.splice(i,1);
+							i--;
+							
+							//蛋碎
+							arrBullet.splice(j,1);
+							j--;
+							
+							
+							//存金币
+							var iCoin=new Coin(type);
+							iCoin.x=x;
+							iCoin.y=y;
+							iCoin.rotate=rotate;
+							arrCoin.push(iCoin);
+							
+						}						
+					}	
+				}
+				
+				
+			},16);
+			
+			//给炮一个放射的方向事件
+			oC.onclick=function(ev){
+				
+				var conType=oCn.type;
+				var conX=oCn.x;
+				var conY=oCn.y;
+				
+				//炮的样式修改
+				var x=ev.clientX-oC.offsetLeft-oCn.x;
+				var y=oCn.y-ev.clientY-oC.offsetTop;
+				
+				var d=90-a2d(Math.atan2(y,x));
+				oCn.rotate=d;
+				oCn.emitChange();
+				//炮弹
+				var bullet=new Bullet(conType);
+				bullet.x=conX;
+				bullet.y=conY;
+				bullet.rotate=d;
+				arrBullet.push(bullet);
+				
+				
+				//放炮的声音
+				var oA=new Audio();
+				oA.src='snd/cannon.mp3';	
+				oA.play();
+			
+			};
+				
+		});
+		
+	};
+</script>
+</head>
+<body>
+	<canvas id="oc" width="800" height="600"></canvas>
+</body>
+</html>
+
+
+
+
+
+
+

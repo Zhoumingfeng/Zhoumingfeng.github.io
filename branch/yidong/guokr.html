@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content=" width=device-width,user-scalable=no,initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>手机端页面</title>
+<style>
+	*{ padding:0; margin:0; list-style:none;}
+	.header{ height:2.95rem; background:#262626; display:-webkit-box;border-bottom: 2px solid #4bccae;}
+	.header_l{ width:2.95rem;height:100%; display:block; text-indent:-999em; background:url(img2/1.jpg) no-repeat; background-size:100%;}
+	.header h1{ -webkit-box-flex:1; font-size:1rem; color:#FFF; text-align:center; line-height:3rem;}
+	.header_r{ width:2.95rem;  height:100%; text-indent:-999em;
+	display:-webkit-box;
+	-webkit-box-pack:center; -webkit-box-align:center;}
+	.header_r a{ background:url(img2/2.jpg) ; width:2.95rem; height:100%; background-size:100%; display:block;}
+    .wrap{width: 100%;overflow: hidden;}
+
+    .wrap_yh{width: 16rem;height: 2rem;display:-webkit-box;}
+    .wrap_yh_l{-webkit-box-flex:1;border-right: 2px solid #696d70}
+    .wrap_yh_r{-webkit-box-flex:1;}
+    .wrap_yh_l a{font-size:1rem;text-align: center;line-height: 2rem; background: url(img2/3.jpg)no-repeat;background-position:10% 15%;background-size: 25%; font-weight: bold;color: #696d70;text-decoration: none;width: 8rem;height: 2rem;display: block; }
+    .wrap_yh a span{margin-left: 2rem;}
+    .wrap_yh_r a{font-size:1rem;text-align: center;line-height: 2rem; background: url(img2/3.jpg)no-repeat;background-position:10% 15%;background-size: 25%; font-weight: bold;color: #696d70;text-decoration: none;width: 8rem;height: 2rem;display: block;}
+    
+    .wrap_box .box{width: 100%;position: relative;}
+    .wrap_box .box ul li img{width: 100%;height: 7.8rem;}
+    .wrap_box .box_b{width: 100%;height: 1.85rem;position: absolute;bottom: .2rem;text-align:center; line-height:1.8rem;background: #000;z-index: 2;color: #ccc;opacity: .7;font-size: .8rem;font-weight: bold;}
+    .wrap_b{width: 100%; border-bottom: 2px solid #4bccae;}
+    .wrap_b li a{margin-left: .5rem;height: 2rem; font-size: .75rem;line-height: 2rem;border-bottom: 1px solid #e0e0e0;color: #696d70;
+    	text-decoration: none;font-weight: bold;display: block;}
+
+    h2{margin-left: .5rem;height: 2rem; font-size: .8rem;line-height: 2rem;border-bottom: 1px solid #e0e0e0;font-weight: bold;}
+    h3{font-size: .75rem;color:#696d70;height: 2rem; line-height:2rem;font-weight: bold;  }
+    p{font-size: .75rem;color:#696d70;height: 1rem; line-height:1rem;}
+    .wrap_e{width: 100%;overflow: hidden;border-bottom: 2px solid #4bccae;}
+    .wrap_e ul{overflow: hidden;border-bottom: 1px solid #e0e0e0;}
+    .wrap_e ul li{float: left;margin:0 .75rem; height: 2rem; font-size: .8rem;line-height: 2rem;}
+    .wrap_e_b{border-bottom: 1px solid #e0e0e0;}
+    .wrap_e_l{float: left;}
+    .wrap_e_l li{margin:0 1rem;}
+    .wrap_e_l li img{width: 5.2rem;height:3.7rem;}
+    .go{width: 100%;height:2rem;border-bottom: 2px solid #4bccae;margin-bottom: 3.75rem;}
+    .go a{font-size:1rem;text-align: center;line-height: 2rem; background: url(img2/7.jpg)no-repeat;background-position:25% 15%;background-size: 13%; font-weight: bold;color: #696d70;text-decoration: none;width: 100%;height: 2rem;display: block;}
+    
+    
+    .red{border-bottom: 3px solid red;}
+   
+
+	.footer{ position:fixed; bottom:0; left:0;width: 100%; height: 3.75rem; background:#262626;display:-webkit-box;}
+
+	.footer_l{-webkit-box-flex:1;border-right: 2px solid #696d70}
+	.footer_r{-webkit-box-flex:1;}
+	.footer_l a{font-size:1rem;text-align: center;line-height: 3.75rem; background: url(img2/8.jpg)no-repeat;background-position:15% 30%;background-size: 30%; font-weight: bold;color: #696d70;text-decoration: none;width: 8rem;height: 3.75rem;display: block; }
+	.footer_r a{font-size:1rem;text-align: center;line-height: 3.75rem; background: url(img2/9.jpg)no-repeat;background-position:5% 30%;background-size: 30%; font-weight: bold;color: #696d70;text-decoration: none;width: 8rem;height: 3.75rem;display: block;}
+	.footer a span{margin-left: 1rem;}
+	
+	
+</style>
+<script>
+	(function(win,doc){
+		function change(){
+			doc.documentElement.style.fontSize=20/320*doc.documentElement.clientWidth+'px';
+		}
+		change();
+		win.addEventListener('resize',change,false);	
+	})(window,document);
+</script>
+</head>
+
+<body>
+	<header class="header">
+    	<a href="javascript:;" class="header_l">列表</a>
+        <h1>Guokr.com</h1>
+        <p class="header_r">
+        	<a href="javascript:;" >发送邮件</a>
+        </p>
+    </header>
+    <div class=" wrap">
+	    <div class="wrap_yh">
+		    <div class="wrap_yh_l">
+		    	<a href="javascript:;"><span>用户登录</span></a>
+		    </div>
+		    <div class="wrap_yh_r">
+		    	<a href="javascript:;" ><span>用户注册</span></a>
+		    </div>
+	    	
+	    </div> 	
+	    <div class="wrap_box">
+	        <div class="box">
+		        <ul>
+		    	    <li><img src="img2/5.jpg" alt=""></li>
+		    	</ul>
+		    	<li class="box_b"><span>紫禁城的石头是怎样运来的？</span></li>	
+	        </div>
+	    	<ul class="wrap_b">
+	    		<li><a href="javascript:;" >解决科学观点时，你应该知道的20个....</a></li>
+	    		<li><a href="javascript:;" >运动出点汗，更好来谈判</a></li>
+	    		<li><a href="javascript:;" >男女搭配，破案不累</a></li>
+	    		<li><a href="javascript:;" >运动出点汗，更好来谈判</a></li>
+	    		<li><a href="javascript:;" >男女搭配，破案不累</a></li>
+	    		<li><a href="javascript:;" >运动出点汗，更好来谈判</a></li>
+	    		<li><a href="javascript:;" >男女搭配，破案不累</a></li>
+	    	</ul>
+	    </div>
+	    <div class="wrap_e">
+	    	<h2>热门问答</h2>
+	    	<ul>
+	    		<li class="red">科技</li>
+	    		<li>生活</li>
+	    		<li>人文</li>
+	    		<li>自然</li>
+	    	</ul>
+	    	<div class="wrap_e_b">
+		    	<h3>如果把探测器撞到彗星上会怎么样？</h3>
+		    	<div class="wrap_e_l">
+			    	<li><img src="img2/6.jpg" alt=""></li>	
+		    	</div>
+		    		<p>撞上去的事情人类已经干过了。。深度撞击号（英语：Deep lmpact）是美国国家</p>
+	    	</div>
+	    	<ul class="wrap_e_t wrap_b">
+	    		<li><a href="javascript:;" >磁场是运动的电场吗？</a></li>
+	    		<li><a href="javascript:;" >什么函数能描述你的人生</a></li>
+	    		<li><a href="javascript:;" >磁场是运动的电场吗？</a></li>
+	    		<li><a href="javascript:;" >什么函数能描述你的人生</a></li>
+	    	</ul>
+	    	
+	    </div>
+	    <div class="wrap_e">
+	    	<h2>小组热帖</h2>
+	    	<ul>
+	    		<li class="red">科技</li>
+	    		<li>生活</li>
+	    		<li>人文</li>
+	    		<li>娱乐</li>
+	    	</ul>
+	    	<div class="wrap_e_b">
+		    	<h3>如果把探测器撞到彗星上会怎么样？</h3>
+		    	<div class="wrap_e_l">
+			    	<li><img src="img2/6.jpg" alt=""></li>	
+		    	</div>
+		    		<p>撞上去的事情人类已经干过了。。深度撞击号（英语：Deep lmpact）是美国国家</p>
+	    	</div>
+	    	<ul class="wrap_e_t wrap_b">
+	    		<li><a href="javascript:;" >磁场是运动的电场吗？</a></li>
+	    		<li><a href="javascript:;" >什么函数能描述你的人生</a></li>
+	    		<li><a href="javascript:;" >磁场是运动的电场吗？</a></li>
+	    		<li><a href="javascript:;" >什么函数能描述你的人生</a></li>
+	    	</ul>
+	    </div>
+	    <div class="go">
+	    	<a href="javascript:;"><span>回到顶部</span></a>
+	    </div>
+
+    </div>
+    <footer class='footer'>
+    	<div class="footer_l">
+    		<a href="javascript:;"><span>PC版</span></a>
+    	</div>
+    	<div class="footer_r">
+    		<a href="javascript:;"><span>移动应用</span></a>
+    	</div>		
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+

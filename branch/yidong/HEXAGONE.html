@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content=" width=device-width,user-scalable=no,initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>手机端页面</title>
+<style>
+	*{ padding:0; margin:0; list-style:none;}
+
+	.header{ height:3rem; background:#344a61; display:-webkit-box;}
+	.header_l{ width:2.95rem; border-right:1px solid #CCC; height:100%; display:block; text-indent:-999em; background:url(img/1.png) no-repeat 2px 0; background-size:100%;}
+	.header h1{ -webkit-box-flex:1; font-size:1rem; color:#FFF; text-align:center; line-height:3rem;}
+	.header_r{ width:2.95rem; border-left:1px solid #CCC; height:100%; text-indent:-999em;
+	display:-webkit-box;
+	-webkit-box-pack:center; -webkit-box-align:center;}
+	.header_r a{ background:url(img/2.png) ; width:0.85rem; height:0.65rem; background-size:100%; display:block;}
+    .wrap{margin: 1rem .5rem 4rem;}
+    
+    .wrap_box .box{width: 100%;position: relative;}
+    .wrap_box .box ul li img{width: 100%;height: 9.3rem;}
+    .wrap_box .box_l{width: 1.5rem;height: 1.5rem;position: absolute;left: 1rem;bottom: 2.3rem;z-index: 2;}
+    .wrap_box .box_r{width: 1.5rem;height: 1.5rem;position: absolute;right: 1rem;bottom: 2.3rem;z-index: 2;}
+    .wrap_box .box_b{width: 100%;height: 1.85rem;position: absolute;bottom: .5rem;text-align:center; line-height:1.8rem;background: #000;z-index: 2;color: #ccc;opacity: .7;}
+    .wrap_b{margin-bottom:1.25rem; }
+
+    h2{font-size: .8rem;margin: .5rem;}
+    h3{font-size: .8rem;color:#ccc;border-bottom:2px solid #ccc;height: 2.15rem; line-height:2.15rem;  }
+    p{font-size: .7rem;color: #686868;line-height: 1rem;font-weight: bold;}
+    
+    .wrap_e_l{float: left;}
+    .wrap_e_l li{height: 50%;margin: 1rem;}
+    .wrap_e_l li img{width: 4rem;height:4rem;}
+    .wrap_e_r{margin: 1.25rem 0;}
+
+    .wrap_s_t{margin:1.25rem 0;}
+    .wrap_s_b{margin: 1.25rem 0rem;overflow: hidden;}
+    .wrap_s_b li{float: left;margin: .5rem .5rem;}
+    .wrap_s_b li img{width: 4rem;height:4rem;}
+    .wrap_nam{overflow: hidden;margin: 1rem 0;}
+    .wrap_nam_l{margin: .5rem 1rem 1rem .5rem;float: left;}
+    .wrap_nam_l img{width: 4rem;height: 4rem;}
+    .get{text-align: center;margin: 1rem 0;}
+    .get_img{margin:1rem 2.65rem;overflow: hidden;width:9.7rem }
+    .get_img li{float: left;margin: .25rem;}
+    .get_img li img{width: 2.5rem;height: 2.5rem;}
+
+    .wrap_box{border-bottom:2px solid #ccc;}
+    .wrap_e{overflow: hidden;}
+
+	.footer{width: 100%; height: 3rem; background:#000000;}
+	.footer_t{margin:.5rem;width:100%;height: 1rem;overflow: hidden;}
+	.footer_t li{width:12.5%;float: left;height: 1rem; }
+	.footer_t li img{width: 1rem;height: 1rem;}
+	.footer_b {width: 100%;height: 1rem;text-align: center;font-size: .6rem;color: #ccc;font-weight: bold;}
+	
+	
+</style>
+<script>
+	(function(win,doc){
+		function change(){
+			doc.documentElement.style.fontSize=20/320*doc.documentElement.clientWidth+'px';
+		}
+		change();
+		win.addEventListener('resize',change,false);	
+	})(window,document);
+</script>
+</head>
+
+<body>
+	<header class="header">
+    	<a href="javascript:;" class="header_l">列表</a>
+        <h1>HEXEGONE</h1>
+        <p class="header_r">
+        	<a href="javascript:;" >发送邮件</a>
+        </p>
+    </header>
+    <h3>HOMEPAGE</h3>
+    <div class=" wrap">
+	    <div class="wrap_box">
+	        <div class="box">
+		        <ul>
+		    	    <li><img src="img/4.jpg" alt=""></li>
+		    	</ul>
+		    	<li class="box_l"></li>
+		    	<li class="box_r"></li>
+		    	<li class="box_b"><h5>A small caption</h5></li>	
+	        </div>
+	    	<div class="wrap_b">
+	    		<h2>WELL,HELLO THERE!</h2>
+	    		<p>ICIBA English for the majority of users to provide online translation, online dictionary, spoken English, English learning materials!</p>
+	    	</div>
+	    </div>
+	    <div class="wrap_e wrap_box">
+	    	<div class="wrap_e_l">
+		    	<li><img src="img/5.jpg" alt=""></li>
+		    	<li><img src="img/5.jpg" alt=""></li>	
+	    	</div>
+	    	<div class="wrap_e_r">
+	    		<h2>EASY TO USE!</h2>
+	    		<p>ICIBA English for the majority of users to provide online!</p>
+	    		<h2>BUILT WITH CARE!</h2>
+	    		<p>ICIBA English for the majority of users to provide online!</p>
+	    	</div>
+	    </div>
+	    <div class="wrap_s wrap_box">
+	    	<div class="wrap_s_t">
+	    		<h2>SOME OF OUR WORKS!</h2>
+	    		<p>ICIBA English for the majority of users to provide online!</p>
+	    	</div>
+	    	<div class="wrap_s_b">
+	    		<li><img src="img/5.jpg" alt=""></li>
+	    		<li ><img src="img/5.jpg" alt=""></li>
+	    		<li><img src="img/5.jpg" alt=""></li>
+	    		<li><img src="img/5.jpg" alt=""></li>
+	    		<li ><img src="img/5.jpg" alt=""></li>
+	    		<li><img src="img/5.jpg" alt=""></li>
+	    	</div>
+	    	
+	    </div>
+	    <div class="wrap_box">
+		    <div>
+		    	<h2>TESTIMONIALS</h2>
+	    		<p>ICIBA English for the majority of users to provide online,spoken English, English learning materials!</p>
+		    </div>
+		    <div class="wrap_nam">
+		    	<li class="wrap_nam_l"><img src="img/6.jpg" alt=""></li>
+	    		<p>ICIBA English for the majority of users to provide online,spoken English, English learning materials!</p>
+		    </div>
+	    	
+	    </div>	
+	    <div class="wrap_box">
+	        <div class="get">
+	        	<h2>GET SOCLAL WLTH US!</h2>
+	    	    <p>ICIBA English for the majority of users to provide online,spoken English!</p>
+	        </div>
+	        <div class="get_img">
+	        	<li><img src="img/7.jpg" alt=""></li>
+	        	<li><img src="img/8.jpg" alt=""></li>
+	        	<li><img src="img/9.jpg" alt=""></li>
+	        </div>
+	    	
+	    </div>
+	    <div class="get" style="color:#ccc;">
+    		<h2>COPYRIGHT 2013</h2>
+    		<h2>ALL RIGTS RESERVED</h2>
+	    </div>
+    </div>
+    <footer class='footer'>
+    	<ul class="footer_t">
+    		<li><img src="img/3.jpg" alt=""></li>
+    		<li><img src="img/3.jpg" alt=""></li>
+    		<li><img src="img/3.jpg" alt=""></li>
+    		<li><img src="img/3.jpg" alt=""></li>
+    		<li><img src="img/3.jpg" alt=""></li>
+    		<li><img src="img/3.jpg" alt=""></li>
+    		<li><img src="img/3.jpg" alt=""></li>
+    		<li><img src="img/3.jpg" alt=""></li>	
+    	</ul>
+    	<div class="footer_b"><span>TAP THE ICONS TO CHANGE THE MENU STYLE!</span></div>
+    	
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+

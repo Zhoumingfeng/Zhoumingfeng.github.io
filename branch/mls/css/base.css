@@ -1,0 +1,15 @@
+@charset "utf-8";
+ /*CSS Document*/
+ /*body{height:6000px;}*/
+*{padding:0; margin:0;  font-size:12px;font-family: '黑体'}
+ul li,dl dt dd,ol li{padding:0; margin:0;}
+li{list-style:none;}
+p,body{margin:0; padding:0;}
+h1,h2,h3,h4,h5,h6,b,strong{font-weight:normal;}
+i,em{font-style:normal;}
+a{text-decoration:none; color:#000;}
+
+.fl{float:left;}
+.fr{float:right;}
+.clearfix:after{display:block; content:""; clear:both;}
+.clearfix{zoom:1;}
