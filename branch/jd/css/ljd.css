@@ -1,0 +1,110 @@
+.lnheaderbox{width: 100%;min-width: 987px;background: #f1f1f1;height: 30px;color:#666;}
+.lnhead{height: 30px;}
+.lnheadl{width: 176px;height: 30px;line-height: 30px;padding-left: 8px;}
+.lnsz{font-size: 12px;line-height: 30px;}
+.lnoption{height: 30px;position: relative;}
+.lntoph{font-size: 12px;background: url(../img/lnxit.png)no-repeat right center;padding-right: 18px;}
+.lnsh{height: 100px;position: absolute;left:-1px;top:30px;display: none;border:1px solid red;width: 90px;background: #ccc;}
+.lnoption:hover .lnsh{display: block;}
+.lnhed{width: 126px;line-height: 30px;}
+.lnhed a{margin-left:2px;color:#b63535;}
+.lnheadtop{}
+.lnheadtop li{position: relative;float: left;margin-right: 22px;line-height: 30px;}
+.lnheadtop .lnlast{margin-right: 12px;}
+.lnheadtop li a{color:#666;}
+.lnoption a .lnphone{width: 15px;height:20px;background: url(../img/jd2015img.png)no-repeat 0 0;display: inline-block;margin-top: 7px;margin-right: 6px;}
+/*==========================================背景图==========================*/
+.lnimgbox{width: 100%;height: 80px;min-width: 987px;}
+.lnimg1{height: 80px;background: url(../img/564a84adN65b20969.jpg);}
+/*==========================================京东log======================================*/
+.lnlogbox{width: 100%;min-width: 987px;height: 100px;}
+.lnlog{height: 80px;padding-top: 20px;}
+.lnlog h2 a{width: 270px;height: 60px;background: url(../img/logo-201305.png);display: block;text-indent: -300px;}
+.lninput{width: 462px;padding: 5px 0 0 92px;}
+.lninput .inputtop{width:462px;height: 36px; }
+.inputtop input{width: 378px;height: 32px;border:2px solid #b61d1d;border-right:none;}
+.search{width: 82px;height: 36px;background: #b61d1d;text-align: center;line-height: 36px;color:#fff;}
+.lnsubnav{}
+.lnsubnav li{float: left;line-height: 29px;padding-right:14px;font-weight: bold; }
+.lnsubnav li a{color:#666;}
+.lnsubnav li a:hover{color:#b61d1d;}
+.lnsubnav .lnmih{padding-right: 0;}
+
+.lnshop{width: 138px;padding-top: 2px;position: relative;}
+.lncar{width: 136px;height: 34px;border:1px solid #dfdfdf;background:#f9f9f9;margin-top: 3px;line-height: 14px;display: block;}
+.lncar i{width: 16px;height: 13px;background: url(../img/jd2015img.png)-1px -92px;display:inline-block;margin: 10px 6px 0 21px;}
+.lncar span{background: url(../img/lnyoujintou.png)no-repeat right center;padding-right: 24px;color:#666;line-height: 32px;}
+.lnnumber{position: absolute;top:0;right:24px;height: 14px;background:#c81623;line-height: 14px;color:#fff;border-radius: 7px 7px 7px 0;min-width: 12px;text-align: center;}
+/*==========================================导航============================================*/
+.lnnavbox{width: 100%;min-width: 987px; }
+.lnnav{height: 512px;}
+.lnsubnavl{width: 210px;height: 512px;}
+.lnsubnavl h3{height: 46px;background: #b1191a;color:#fff;line-height: 46px;padding-left: 10px;font-size: 14px;}
+.lnhomedq{background: #c81623;height:466px;}
+.lnhomedq li{width: 190px;height: 31px;line-height: 31px;font-size: 14px;position: relative;padding-left: 10px; }
+.lnrightbox{width: 300px;height: 500px;border:1px solid red;position: absolute;left:210px;top:0;z-index: 99;display: none;background: #ccc;}
+.lnhomedq li:hover .lnrightbox{display: block;}
+.lnhomedq li:hover{background: #fff;padding-right:20px;}
+.lnhomedq li:hover a{color:red;}
+.lnhomedq li:hover i{display: none;}
+.lnhomedq li a{color: #fff;}
+
+.lnhomedq li i{width: 5px;height: 7px;background: url(../img/lnyoujit.png) right center;margin-top: 12px;margin-right: 12px;}
+.lnsubnar{width: 777px;height: 512px;}
+.lnsubnav-t{height: 44px;border-bottom: 2px solid #b1191a;padding-left: 20px;}
+.lnsubnav-t li{float: left;margin-right: 40px;line-height: 44px;font-size: 14px;font-weight: bold;}
+.lnsubnav-t li a{color:#333;}
+.lnsubnav-t li a:hover{color:#b1191a;}
+.lnsubnafoot{width: 767px;height: 454px;padding: 12px 0 0 10px; }
+.lnnavimgl{width: 511px;height: 454px;position: relative;}
+.lnnavimgl a img{width: 511px;height: 454px;display: none;}
+.lnnavimgl i{width: 28px;height: 62px;background: #a7a7a7;position: absolute;top:50%;text-align: center;line-height: 62px;font-size: 20px;color:#fff;}
+.lnnavimgl .lnyoujit{right: 0;}
+.lnnavimgl .lnborder{position: absolute;bottom: 8px;left:50%;}
+.lnnavimgl .lnborder li{float: left;width: 18px;height: 18px;background: #3e3e3e;border-radius: 50%;text-align: center;line-height: 18px;margin-left: 4px;} 
+.lnnavimgl .lnborder li a{color:#fff;}
+.lnborder li.lnnumb1 {background: none;}
+.lnborder li.lnnumb2{background: #b61b1f;}
+.lnnavimgr{width: 245px;height: 452px;border:1px solid #e4e4e4;}
+.lnnavimgr h3{height: 28px;border-bottom: 1px dotted #e4e4e4;font-size: 14px;padding: 15px 0 0 15px;}
+.lnnavimgr h3 a{float: right;background: url(../img/lnyoujintou.png)no-repeat right center;padding-right: 15px;margin-right: 13px;font-size: 11px;color:#666;}
+.lnthibox{height: 146px;width: 234px;border-bottom:dashed 1px #e4e4e4;padding: 10px 0 0 11px;}
+.lnthibox li{line-height: 27px;color:#666;}
+.lnthibox li a{color:#666;}
+.lnthibox li a:hover{color:red;}
+.lnnavimgr .lnfu{height: 13px;font-size: 14px;padding: 15px;border-bottom:1px dotted #e4e4e4;}
+.lndvd{width: 245px;height: 206px;}
+.lndivu{height: 27px;}
+.lndivu li{width: 62px;height: 25px;border:1px solid #e4e4e4;border-left:none;border-top:none;float: left;text-align: center;line-height: 25px;cursor: pointer;border-top:2px solid #fff;}
+.lndivu li:hover{border-bottom:none;height: 25px;border-top:2px solid red;}
+.lndivu .lngame{width: 56px;border-right:none;}
+.lnhuifeibox{width: 246px;height: 181px;display: none;}
+.lnsytop{height: 34px;}
+.lnsytop div{width: 52px;height: 19px;margin: 10px 8px 0 12px;}
+.lnsytop div span{width: 52px;height: 16px;background: #c81623;color:#fff;text-align: center;line-height: 16px;display: block;}
+.lnsytop div b{width: 5px;height: 3px;background:url(../img/lnssanj.png) ;display: block;margin-left: 23px;}
+.lnsytop strong{float: left;color:#666;margin-top: 13px;}
+.lnsytop a{width: 5px;height: 5px;background: url(../img/lnxx.png);float: right;margin: 7px 4px 0 0;}
+.lndyp{padding-left: 17px;}
+.lndyp li{width: 65px;height: 115px;float: left;margin-right: 10px;}
+.lndyp li a img{width: 65px;height: 90px;}
+.lndyp li a span{width: 57px;height: 20px;background: #c81623;border-radius: 3px;font-size: 11px;display: block;text-align: center;line-height: 20px;color:#fff;margin: 5px 4px;}
+.lndyfooter{line-height: 15px;}
+.lndyfooter span{width: 22px;height: 10px;margin: 7px 3px 0 15px;background: url(../img/lnfontsi.png);}
+.lndyfooter strong{font-size: 10px;color:#005ea7;margin-top: 8px;}
+/*==============================================京东baner=====================================*/
+.lnjdbanerbox{width: 100%;min-width: 987px;  }
+.lnjdbaner{height: 161px;padding-top: 10px;}
+.lnjdbaner li{float: left;margin-right: 1px;}
+.lnjdbaner li a img{width: 246px;height: 161px;}
+.lnjdbaner .lnlast{margin-right: 0;}
+
+.lnjdbanerboxs{width: 100%;min-width: 987px; }
+.lnjdbaners{height:223px;padding: 18px 0 25px 0;}
+.lnjdbaners-l{ }
+.lnjdbaners-l a img{width: 180px;height: 220px;}
+.lnjdbaners-r {width: 807px;height: 219px;border-top:1px solid #dcdcdc;}
+.lnjdbaners-r li{width: 80px;height: 72px;border:1px solid #dcdcdc;float: left;border-left: none;border-top: none;}
+.lnjdbaners-r li a img{width: 80px;height: 72px;}
+.lnjdbaners-r .lnlast{width: 78px;border-right: none;}
+.lnjdbaners-r .lnlast a img{width: 78px;}

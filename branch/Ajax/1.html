@@ -1,0 +1,215 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>许愿池</title>
+<link rel="stylesheet" href="./Css/index.css" />
+<script src="ajax3.js"></script>
+<script>
+	function rnd(n,m){
+		return parseInt(Math.random()*(m-n)+n);
+	}
+	window.onload=function(){
+		var oSend=document.getElementById('send');
+		var oMask=document.getElementById('layer');
+		var oSendBox=document.getElementById('send-form');
+		var oSendBtn=document.getElementById('send-btn');
+		var oClose=document.getElementById('close');
+		var oUser=document.getElementById('username');
+		var oCout=document.getElementById('content');
+		var oMain=document.getElementById('main');
+		var zIndex=1;
+		var oImgBox=document.getElementById('phiz');
+		var aImg=oImgBox.getElementsByTagName('img');
+
+		var clienW=document.documentElement.clientWidth;
+		var clienH=document.documentElement.clientHeight;
+		oSend.onclick=function(){
+			oMask.style.display='block';
+			oSendBox.style.display='block';
+			oSendBox.style.left=(clienW-oSendBox.offsetWidth)/2+'px';
+		};
+		oClose.onclick=function(){
+			oMask.style.display='none';
+			oSendBox.style.display='none';
+		};
+		/*wish.php?act=add&username=xxx&content=xxx
+		 {error:1, msg:xxx}
+		*/
+		//许愿
+		var URL='wish.php';
+		function createMsg(username,content,time,id){
+			var oDate=new Date();
+			oDate.setTime(time*1000);
+			var str=oDate.getFullYear()+'-'+(oDate.getMonth()+1)+'-'+oDate.getDate()+' '+oDate.getHours()+':'+oDate.getMinutes()+':'+oDate.getSeconds();
+			var oDl=document.createElement('dl');
+			oDl.className='paper a'+(id%5+1)+'';
+			oDl.innerHTML='<dt>'
+					+'<span class="username">'+username+'</span>'
+					+'<span class="num">No.0000'+id+'</span>'
+					+'</dt>'
+					+'<dd class="content">'+content+'</dd>'
+					+'<dd class="bottom">'
+					+'<span class="time">'+str+'</span>'
+					+'<a href="javascript:;" class="close"></a>'
+					+'</dd>';
+					/*
+					 wish.php?act=delete&id=0;
+					 {error:1, msg:xxx}
+					*/
+					var oA=oDl.getElementsByTagName('a')[0];
+					oA.onclick=function(){
+						ajax({
+							url:URL,
+							data:{
+								act:'delete',
+								id:id
+							},
+							success:function(str){
+								var json=eval('('+str+')');
+
+								if(json.error){
+									alert('删除失败！')
+								}else{
+									oMain.removeChild(oDl);
+								}
+							}
+						})
+					}
+			return oDl;
+		}
+		oSendBtn.onclick=function(){
+			ajax({
+				url:URL,
+				data:{
+					act:'add',
+					username:oUser.value,
+					content:oCout.value
+				},
+				success:function(str){
+					var json=eval('('+str+')');
+					if(json.error){
+						alert('创建失败'+1);
+					}else{
+						getPage();
+						oUser.value='';
+						oCout.value='';
+					}
+				}
+			});
+			oMask.style.display='none';
+			oSendBox.style.display='none';
+		};
+		/*wish.php?act=get
+		 {error:0, msg:[{'id':1, 'username':'xxx', 'content':'xxx'},{},{},{}.......]}*/
+		getPage();
+		function getPage(){
+			oMain.innerHTML='';
+			ajax({
+				url:URL,
+				data:{
+					act:'get'
+				},
+				success:function(str){
+					var arr=eval('('+str+')').msg;
+					for(var i=0;i<arr.length;i++){
+						var oDl=createMsg(arr[i].username,arr[i].content,arr[i].time,arr[i].id);
+						oMain.appendChild(oDl);
+						oDl.style.left=rnd(100,clienW-300)+'px';
+						oDl.style.top=rnd(50,clienH-300)+'px';
+						drag(oDl);
+					}
+				}
+			})
+		}
+		function drag(oDiv) {
+			oDiv.onmousedown = function (ev) {
+				var oEvent = ev || event;
+				oDiv.style.zIndex = zIndex++;
+				var disX = oEvent.clientX - oDiv.offsetLeft;
+				var disY = oEvent.clientY - oDiv.offsetTop;
+
+				document.onmousemove = function (ev) {
+					var oEvent = ev || event;
+
+					oDiv.style.left = oEvent.clientX - disX + 'px';
+					oDiv.style.top = oEvent.clientY - disY + 'px';
+				}
+				document.onmouseup = function () {
+					document.onmousemove = null;
+					document.onmouseup = null;
+					oDiv.releaseCapture && oDiv.releaseCapture();
+				}
+				oDiv.setCapture && oDiv.setCapture();
+				return false;
+			}
+		}
+		for(var i=0;i<aImg.length;i++){
+			aImg[i].onclick=function(){
+				oCout.value+='['+this.alt+']';
+			}
+		}
+
+		//[抱抱][害羞][酷][嘻嘻]
+		function toFace(str){
+			var arr=['[抓狂]','[抱抱]','[害羞]','[酷]','[嘻嘻]','[太开心]','[偷笑]','[钱]','[花心]','[挤眼]'];
+			var arr2=['zhuakuang','']
+			return str;
+		}
+	}
+</script>
+</head>
+<body>
+<div id='top'>
+    <span id='send'></span>
+</div>
+<div id='main'>
+    <!--<dl class='paper a1'>
+        <dt>
+            <span class='username'>智能社</span>
+            <span class='num'>No.00001</span>
+        </dt>
+        <dd class='content'>欢迎来到智能社</dd>
+        <dd class='bottom'>
+            <span class='time'>今天08:30</span>
+            <a href="" class='close'></a>
+        </dd>
+    </dl>-->
+</div>
+
+<div id="layer"></div>
+
+<div id='send-form'>
+    <p class='title'><span>许下你的愿望</span><a href="javascript:;" id='close'></a></p>
+    <form action="" name='wish'>
+        <p>
+            <label for="username">昵称：</label>
+            <input type="text" name='username' id='username'/>
+        </p>
+        <p>
+            <label for="content">愿望：(您还可以输入&nbsp;<span id='font-num'>50</span>&nbsp;个字)</label>
+            <textarea name="content" id='content'></textarea>
+            <div id='phiz'>
+                <img src="./Images/phiz/zhuakuang.gif" alt="抓狂" />
+                <img src="./Images/phiz/baobao.gif" alt="抱抱" />
+                <img src="./Images/phiz/haixiu.gif" alt="害羞" />
+                <img src="./Images/phiz/ku.gif" alt="酷" />
+                <img src="./Images/phiz/xixi.gif" alt="嘻嘻" />
+                <img src="./Images/phiz/taikaixin.gif" alt="太开心" />
+                <img src="./Images/phiz/touxiao.gif" alt="偷笑" />
+                <img src="./Images/phiz/qian.gif" alt="钱" />
+                <img src="./Images/phiz/huaxin.gif" alt="花心" />
+                <img src="./Images/phiz/jiyan.gif" alt="挤眼" />
+            </div>
+        </p>
+        <span id='send-btn'></span>
+    </form>
+</div>
+<!--[if IE 6]>
+<script type="text/javascript" src="./Js/iepng.js"></script>
+<script type="text/javascript">
+    DD_belatedPNG.fix('#send,#close,.close','background');
+</script>
+<![endif]-->
+</body>
+</html>

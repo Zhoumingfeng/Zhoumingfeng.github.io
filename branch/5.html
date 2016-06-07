@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆的运动</title>
+    <style>
+        #box{ width:200px; height:200px; border-radius:50%; border:2px solid #000; position:relative; margin:100px auto;}
+        #box span{ width:50px; height:50px; border-radius:50%; background:slateblue; position:absolute; left:50%; margin-left:-25px; margin-top:-25px; top:0;}
+    </style>
+    <script>
+        function d2a(n){
+            //角度转成弧度
+            return n*Math.PI/180;
+        }
+        function a2d(n){
+            //角度转成弧度
+            return n*180/Math.PI;
+        }
+        window.onload=function(){
+            var oBox=document.getElementById('box');
+            var oSpan=document.getElementsByTagName('span')[0];
+            var timer=null;
+
+            var N=10;
+            for(var i=0;i<N;i++){
+                var oSpan=document.createElement('span');
+                oBox.appendChild(oSpan);
+            }
+            var aSpan=oBox.children;
+            var bSys=true;
+            document.onclick=function(){
+                for(var i=0;i<aSpan.length;i++){
+                   if(bSys){
+                       doMove(360/N*i,aSpan[i]);
+                   }else{
+                       doMove(0,aSpan[i]);
+                   }
+                }
+                bSys=!bSys;
+            };
+
+            function doMove(iTarget,oSpan){
+                var R=oBox.offsetWidth/2;
+                clearInterval(oSpan.timer);
+
+                var time=1000;
+                var start=oSpan.a || 0;
+                var dis=iTarget-start;
+                var iCount=Math.ceil(time/30);
+                var n=0;
+                oSpan.timer=setInterval(function(){
+                    n++
+                    var a=1-n/iCount
+                    var cur=start+dis*(1-a*a*a);
+                    var x=R+R*Math.sin(d2a(cur));
+                    var y=R-R*Math.cos(d2a(cur));
+                    oSpan.a=cur;
+                    oSpan.style.left=x+'px';
+                    oSpan.style.top=y+'px';
+
+                    if(n==iCount){
+                        clearInterval(oSpan.timer);
+                    }
+                },30);
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>

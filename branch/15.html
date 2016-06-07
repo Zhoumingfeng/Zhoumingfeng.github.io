@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>穿墙运动</title>
+   <style>
+   *{margin: 0;padding: 0;list-style: none;}
+   #box{width:840px;height: 210px;position: relative;background: #ccc;margin: 100px auto; }
+   #box li{width: 200px;height: 200px;margin:5px;float: left;overflow: hidden;z-index: 2;}
+   #box li img{width: 200px;height: 200px;} 
+   #box li em{width: 200px;height: 200px;background: #c07;opacity: .5;filter:alpha(opacity:50);position: absolute;left: 0;top: 0;font-size: 35px;text-align: center;}
+   </style>
+   <script src="move2.js"></script>
+	<script type="text/javascript">
+
+  window.onload=function(){
+  var oBox=document.getElementById('box');
+  var aLi=oBox.getElementsByTagName('li');
+  var aEm=oBox.getElementsByTagName('em');
+  var aImg=document.getElementsByTagName('img')
+  var arr=[];
+  var dis=[];
+  
+  for(var i=0;i<aLi.length;i++){
+    arr.push({left:aLi[i].offsetLeft,top:aLi[i].offsetTop});
+  }
+  for(var i=0;i<aLi.length;i++){
+    aLi[i].style.left=arr[i].left+'px';
+    aLi[i].style.top=arr[i].top+'px';
+    aLi[i].style.position='absolute';
+    aLi[i].style.margin=0;
+    aEm[i].style.top='200px';
+  }
+  for(var i=0;i<aLi.length;i++){
+    aLi[i].index=i;
+    aLi[i].onmouseover=function(ev){
+      var oEvent=ev||event;
+      var frome=oEvent.fromElement||oEvent.relatedTarget;
+      if(this.contains(frome))return;
+      var disL=oEvent.clientX-this.offsetLeft-oBox.offsetLeft;
+      var disT=oEvent.clientY-this.offsetTop-oBox.offsetTop;
+      var disR=this.offsetWidth-parseFloat(disL);
+      var disB=this.offsetHeight-parseFloat(disT);
+      dis.push({name:disL},{name:disT},{name:disR},{name:disB})
+      dis.sort(function(n1,n2){
+        return n1.name-n2.name;
+      });
+      switch(dis[0].name){
+        case disL:
+        aEm[this.index].style.top=0;
+        aEm[this.index].style.left='-200px';
+        move(aEm[this.index],{left:0})
+        break;
+        case disT:
+        aEm[this.index].style.top='-200px';
+        aEm[this.index].style.left=0;
+        move(aEm[this.index],{top:0})
+        break;
+        case disR:
+        aEm[this.index].style.top=0;
+        aEm[this.index].style.left='200px';
+        move(aEm[this.index],{left:0})
+        break;
+        case disB:
+        aEm[this.index].style.top='200px';
+        aEm[this.index].style.left='0';
+        move(aEm[this.index],{top:0})
+        break;
+      }
+      dis.length=0;
+    };
+    aLi[i].onmouseout=function(ev){
+      var a=this.index
+      var oEvent=ev||event;
+      var to=oEvent.toElement||oEvent.relatedTarget;
+      if(this.contains(to))return;
+      var disL=oEvent.clientX-this.offsetLeft-oBox.offsetLeft;
+      var disT=oEvent.clientY-this.offsetTop-oBox.offsetTop;
+      var disR=this.offsetWidth-parseFloat(disL);
+      var disB=this.offsetHeight-parseFloat(disT);
+      dis.push({name:disL},{name:disT},{name:disR},{name:disB})
+      dis.sort(function(n1,n2){
+        return n1.name-n2.name;
+      });
+      aEm[this.index].style.top=0;
+      aEm[this.index].style.left=0;
+      switch(dis[0].name){
+        case disL:
+        move(aEm[a],{left:-200})
+        break;
+        case disT:
+        move(aEm[a],{top:-200})
+        break;
+        case disR:
+        move(aEm[a],{left:200})
+        break;
+        case disB:
+        move(aEm[a],{top:200})
+        break;
+      }
+      dis.length=0;
+    };
+  } 
+};
+        
+	</script>
+   
+</head>
+<body>
+<div id="box">
+  <li><img src="img/1.jpg" alt="">
+      <em> 娇艳欲滴 </em>
+  </li>
+  <li><img src="img/2.jpg" alt="">
+       <em> 轩辕剑 唐嫣 </em>
+  </li>
+  <li><img src="img/3.jpg" alt="">
+       <em> 清新淡雅 </em>
+  </li>
+  <li><img src="img/4.jpg" alt="">
+       <em> 百合花</em>
+  </li>
+
+</div>
+
+</body>
+</html>

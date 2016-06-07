@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>放大镜</title>
+   <style>
+      #box{ width:100px; height:150px; border:1px solid #000;}
+      #box img{ width:100px; height:150px;}
+      #con{ overflow:hidden; display:none; width:150px; height:200px; }
+      #con img{position:absolute; left:0; top:0; width:300px; height:400px;}
+      #box,#con{ position:relative; float:left;}
+      #con{ margin-left:20px;}
+      #mask{ display:none; width:30px; height:30px; background:sandybrown; opacity:.3; filter:alpha(opacity:30); position:absolute; left:0; top:0;}
+   </style>
+	<script type="text/javascript">
+   window.onload=function(){
+            var oBox=document.getElementById('box');
+            var oCon=document.getElementById('con');
+            var oSpan=document.getElementById('mask');
+            var oImg=oCon.children[0];
+            oBox.onmousemove=function(ev){
+                var oEvent=ev||event;
+                var l=oEvent.clientX-oSpan.offsetWidth/2;
+                var t=oEvent.clientY-oSpan.offsetHeight/2;
+
+                if(l<0)l=0;
+                if(t<0)t=0;
+                if(l>(oBox.offsetWidth-2-oSpan.offsetWidth)){
+                    l=(oBox.offsetWidth-2-oSpan.offsetWidth);
+                }
+                if(t>(oBox.offsetHeight-2-oSpan.offsetHeight)){
+                    t=(oBox.offsetHeight-2-oSpan.offsetHeight);
+                }
+                oSpan.style.left=l+'px';
+                oSpan.style.top=t+'px';
+                oImg.style.left=-l*(oImg.offsetWidth-oCon.offsetWidth)/(oBox.offsetWidth-oSpan.offsetWidth)+'px';
+                oImg.style.top=-t*(oImg.offsetHeight-oCon.offsetHeight)/(oBox.offsetHeight-oSpan.offsetHeight)+'px';
+
+            };
+            oBox.onmouseover=function(){
+                oCon.style.display='block';
+                oSpan.style.display='block';
+            };
+            oBox.onmouseout=function(){
+                oCon.style.display='none';
+                oSpan.style.display='none';
+            };
+        };
+        
+	</script>
+   
+</head>
+<body>
+<div id="box">
+  <span id="mask"></span>
+  <img src="img/img8.jpg" alt="">
+</div>
+
+<div id="con">
+  <img src="img/img8.jpg" alt="">
+</div>
+
+</body>
+</html>

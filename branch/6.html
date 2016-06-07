@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <style>
+        #div{width: 300px;height: 400px;margin: 50px auto;position: relative}
+        #div div{width: 300px;height: 400px;border: 1px solid;display: none}
+        #div span{border-radius: 50%;outline: none;background: pink;padding: 0;margin: 0;
+            display: inline-block;width: 20px;height: 20px;text-align: center;color: white;
+            margin-left: 10px;cursor: pointer}
+        #div div img{width: 300px;height: 400px;}
+        #div span.ac{background: palevioletred}
+        #diva{position: absolute;top:335px;left:92px;z-index: 10}
+        #ala,#alb{text-decoration: none;color: white;display: inline-block;width: 20px;height: 40px;
+            line-height: 40px;background: gray;opacity: 0.5;position: absolute;top:180px;display: none}
+        #alb{left: 282px;}
+
+    </style>
+    <script>
+        window.onload=function(){
+            var oDiv=document.getElementById('div');
+            var oBt=oDiv.getElementsByTagName('span');
+            var oImg=oDiv.getElementsByTagName('img');
+            var odiv=oDiv.getElementsByTagName('div');
+            var odiva=oDiv.getElementsByTagName('a');
+            var icont=0;
+            var timer=null;
+            var timm=null;
+            function fnshow(){
+                for(j=0;j<oBt.length;j++){
+                    oBt[j].className='';
+                    odiv[j].style.display='none'
+                }
+                oBt[icont].className='ac';
+                odiv[icont].style.display='block'
+
+            }
+
+            for(i=0;i<oBt.length;i++){
+                oBt[i].index=i;
+                oBt[i].onmouseover=function(){
+                    icont=this.index;
+                    timm=setTimeout(fnshow,500);
+
+                } }
+            for(i=0;i<oImg.length;i++){
+                oImg[i].onmouseover=function(){
+                    clearTimeout(timm);
+                }
+            }
+            odiva[0].onclick=function(){
+                icont--;
+                if(icont==-1){
+                    icont=2;
+                }
+                fnshow();
+            };
+            timet=odiva[1].onclick=function(){
+                icont++;
+                if(icont==3){
+                    icont=0;
+                }
+                fnshow();
+            };
+            timer=setInterval(timet,3000);
+            oDiv.onmouseover=function(){
+                clearInterval(timer);
+
+               for(i=0;i<odiva.length;i++){
+                    odiva[i].style.display='block';
+                }
+            };
+            oDiv.onmouseout=function(){
+                timer=setInterval(timet,3000);
+                for(i=0;i<odiva.length;i++){
+                    odiva[i].style.display='none';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="div">
+    <a href="javascript:;" id="ala">《</a>
+    <p id="diva">
+        <span class="ac">1</span>
+        <span>2</span>
+        <span>3</span>
+    </p>
+
+    <a href="javascript:;" id="alb">》</a>
+    <div style="display: block"><img src="img/img5.jpg"></div>
+    <div><img src="img/img4.jpg"></div>
+    <div><img src="img/img6.jpg"></div>
+</div>
+
+</body>
+</html>

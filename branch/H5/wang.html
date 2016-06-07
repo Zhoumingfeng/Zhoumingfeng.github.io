@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>屏保动画</title>
+<style>
+	*{ padding:0; margin:0; list-style:none;}
+	html,body{ height:100%; overflow:hidden;}
+	body{ text-align:center; background:#000;}
+</style>
+<script>
+	function rnd(n,m){
+		return parseInt(Math.random()*(m-n))+n;	
+	}
+	window.onload=function(){
+		var oC1=document.querySelector('#c1');
+		var gd=oC1.getContext('2d');
+		
+		oC1.width=document.documentElement.clientWidth;
+		oC1.height=document.documentElement.clientHeight;
+		
+		//存的是点的位置 以及 速度
+		var aPoint=[];
+		/*
+			arr[i]={
+				x:10,
+				y:10,
+				iSpeedX:10,
+				iSpeedY:-10,	
+			}
+		*/
+		
+		var N=5;
+		for(var i=0; i<N;i++){
+			aPoint[i]={
+				x:rnd(0,oC1.width),
+				y:rnd(0,oC1.height),
+				iSpeedX:rnd(-5,5),
+				iSpeedY:rnd(-5,5)
+			};	
+		}
+		
+		var LEN=50;
+		var oldArr=[]; 
+		//[[{},{},{},{},{}],[{},{},{},{},{}]]
+		
+		
+		setInterval(function(){
+			gd.clearRect(0,0,oC1.width,oC1.height);
+			
+			for(var i=0;i<aPoint.length;i++){
+				aPoint[i].x+=aPoint[i].iSpeedX;
+				aPoint[i].y+=aPoint[i].iSpeedY;
+				if(aPoint[i].x<0){
+					aPoint[i].x=0;
+					aPoint[i].iSpeedX*=-1;	
+				}
+				if(aPoint[i].x>oC1.width){
+					aPoint[i].x=oC1.width;
+					aPoint[i].iSpeedX*=-1;	
+				}
+				if(aPoint[i].y<0){
+					aPoint[i].y=0;
+					aPoint[i].iSpeedY*=-1;	
+				}
+				if(aPoint[i].y>oC1.height){
+					aPoint[i].y=oC1.height;
+					aPoint[i].iSpeedY*=-1;	
+				}
+				
+				drawPoint(aPoint[i]);
+			}
+			
+			var arr=[];
+			for(var i=0; i<aPoint.length;i++){
+				arr[i]={x:aPoint[i].x,y:aPoint[i].y}
+			}
+			
+			oldArr.push(arr);
+			
+			if(oldArr.length>=LEN){
+				oldArr.shift();	
+			}
+			
+			//连接点的线
+			gd.beginPath();
+			gd.strokeStyle='#f1f82b';
+			gd.moveTo(aPoint[0].x,aPoint[0].y);
+			for(var i=1;i<aPoint.length;i++){
+				gd.lineTo(aPoint[i].x,aPoint[i].y);
+			}
+			gd.closePath();
+			gd.stroke();
+			
+			
+			//画影子
+			for(var i=0; i<oldArr.length;i++){
+				var oPa=i/oldArr.length;
+				gd.beginPath();
+				gd.moveTo(oldArr[i][0].x,oldArr[i][0].y);
+				gd.strokeStyle='rgba(246,43,248,'+oPa+')';
+				for(var j=1;j<oldArr[i].length;j++){
+					gd.lineTo(oldArr[i][j].x,oldArr[i][j].y);
+				}
+				gd.closePath();
+				gd.stroke();
+			}
+			
+		},16);
+		
+		
+		function drawPoint(p){
+			var pW=1;
+			var pH=1;
+			
+			gd.fillStyle='#f1f82b';
+			gd.fillRect(p.x-pW/2,p.y-pH/2,pW,pH);
+		}
+		
+		
+		
+		
+		
+	};
+</script>
+</head>
+
+<body>
+	<canvas id="c1">
+    	<span>抱歉您的浏览器不支持 canvas 请升级浏览器</span>
+    </canvas>
+</body>
+</html>
+
+
+
+
+
+
+

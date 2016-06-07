@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>无缝滚动</title>
+	<style>
+	*{margin: 0;padding: 0;list-style: none;}
+	#box{width: 840px;height: 210px;margin: 100px auto;position: relative;overflow: hidden;}
+	#oul{width: 840px;height: 210px;background: #ccc; left: 0;top: 0;position: absolute;}
+	#oul li{width: 200px;height: 200px;float: left;padding: 5px;}
+	#oul img{width: 200px;height: 200px;}
+	#ol{width: 840px;height: 210px;position: absolute;}
+	#ol li{width: 420px;height: 210px;float: left;}
+	#ol li.li{left: 0;}
+	#ol li.l1{right: 0;}
+
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){
+		var oUl=document.getElementById('oul');
+		var oOl=document.getElementsByTagName('ol')[0];
+		var aLi=oUl.children;
+		var W=aLi[0].offsetWidth;
+		var timer=null;
+
+		oUl.innerHTML+=oUl.innerHTML;
+		var oW=W*oUl.children.length;
+		oUl.style.width=oW+'px';
+		var iLeft=0;
+
+		function toRight(){
+			clearInterval(timer);
+			timer=setInterval(function(){
+			iLeft+=10;
+			if(iLeft>0){
+				iLeft=-oW/2
+			}
+			oUl.style.left=iLeft+'px';
+
+		},30);
+
+		};
+
+		function toLeft(){
+			clearInterval(timer);
+			timer=setInterval(function(){
+			iLeft-=10;
+			iLeft%=oW/2
+			oUl.style.left=iLeft+'px';
+
+		},30);
+
+		};
+
+		oOl.children[0].onmouseover=function(){
+			toLeft();
+		};
+		oOl.children[1].onmouseover=function(){
+			toRight();
+		};
+
+
+		
+
+	};	
+	</script>
+
+</head>
+<body>
+<div id="box">
+	<ul id="oul">
+		<li><img src="img/1.jpg" alt=""></li>
+		<li><img src="img/2.jpg" alt=""></li>
+		<li><img src="img/3.jpg" alt=""></li>
+		<li><img src="img/4.jpg" alt=""></li>
+	</ul>
+	<ol id="ol">
+		<li class="li"></li>
+
+		<li class="l1"></li>
+	</ol>
+</div>
+
+</body>
+</html>

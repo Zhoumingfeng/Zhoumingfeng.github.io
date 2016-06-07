@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>左右运动</title>
+	<style>
+	*{margin: 0;padding: 0;list-style: none;}
+	img{vertical-align: top;}
+	#div1{width: 430px;height: 355px;margin: 100px auto;position: relative;overflow: hidden;}
+	#div1 ul{width: 2150px;height: 300px; position: absolute;left: 0;top: 0;}
+	#div1 li{width:430px;height: 300px;float: left;}
+	#div1 li img{width: 430px;height: 300px;} 
+	#div1 ol{width: 430px;height: 55px;position: absolute;left: 0px;bottom: 0;position: absolute;}
+	#div1 ol li{width: 80px;height: 50px;margin: 3px;float: left;box-shadow: 1px 1px 4px #000;}
+	#div1 ol li img{width: 80px;height: 50px;}
+	#div1 ol li.ac{box-shadow: 1px 1px 20px #000;transition:1000ms ease all;}
+	
+	</style>
+	<script src="move.js"></script>
+	<script type="text/javascript">
+	window.onload=function(){
+		var oDiv=document.getElementById('div1');
+		var aUl=oDiv.getElementsByTagName('ul')[0];
+		var aOl=oDiv.getElementsByTagName('ol')[0];
+		var aLi=aUl.children;
+		var aBtn=aOl.children;
+
+	    for(var i=0;i<aBtn.length;i++){
+            ;(function(index){
+                aBtn[i].onmouseover=function(){
+                    for(var i=0;i<aBtn.length;i++){
+                        aBtn[i].className='';
+                    }
+                    aBtn[index].className='ac';
+                    Move(aUl,{left:-aLi[0].offsetWidth*index});
+                };
+            })(i);
+
+        }
+
+	
+	};
+
+		
+
+		
+	</script>
+
+</head>
+<body>
+<div id="div1">
+	<ul>
+		<li><img src="img/img1.jpg" alt="1.jpg"></li>
+		<li><img src="img/img2.jpg" alt="2.jpg"></li>
+		<li><img src="img/img3.jpg" alt="3.jpg"></li>
+		<li><img src="img/img4.jpg" alt="4.jpg"></li>
+		<li><img src="img/img5.jpg" alt="5.jpg"></li>
+	</ul>
+	<ol>
+		<li class="ac"><img src="img/img1.jpg" alt="1.jpg"></li>
+		<li><img src="img/img2.jpg" alt="2.jpg"></li>
+		<li><img src="img/img3.jpg" alt="3.jpg"></li>
+		<li><img src="img/img4.jpg" alt="4.jpg"></li>
+		<li><img src="img/img5.jpg" alt="5.jpg"></li>
+	</ol>
+</div>
+
+</body>
+</html>

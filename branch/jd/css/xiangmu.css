@@ -1,0 +1,255 @@
+
+*{ margin:0; padding:0}
+li{ list-style:none;}
+body{ font-size:12px; font-family:"微软雅黑","宋体";}
+h1,h2,h3,h4,h5,h6,strong,b{ font-size:12px; font-weight:normal;}
+em,i{ font-style:normal; }
+a{ text-decoration:none;color: #000 }
+.fl{ float:left; }
+.fr{ float:right; }
+.clear{ clear:both;}
+.clearfix:after{ content:""; clear:both; }
+.clearfix{ zoom:1; }
+img{ vertical-align: top;}
+input,img,a{ border:none;}
+input{ outline: none;}
+table{border-collapse: collapse;}
+.w{width: 987px;margin: 0 auto;}
+/*================================base================================*/
+.wmnav{height: 58px;background: url(../img/wmnav.png) no-repeat;margin-top: 10px}
+.wmnav ul li a{float:left;margin-top: 10px;}
+.wmnav .wma1{width: 43px;height: 42px;margin-left: 18px}
+.wmnav .wma2{width: 115px;height: 38px;margin-left: 19px;}
+.wmnav .wma3{width: 119px;height: 44px;margin-left: 25px}
+/*==================科技精品========================*/
+.wmkj{height: 403px;border-bottom:1px solid #ededed;}
+.wmkj .wmkjtop{width: 987px;height: 201px;border-bottom:1px solid #ededed;}
+.wmkj .wmkjtop .li1{;padding-top:23px;width: 164px;height: 178px;background: url(../img/wm1.png) no-repeat;}
+.wmkj .wmkjtop .li1 .p1{margin-left: 50px;}
+.wmkj .wmkjtop .li1 .p1 a{font-size: 16px;color: #666;}
+.wmkj .wmkjtop .li1 .p2{margin-left: 26px;margin-top:11px;}
+.wmkj .wmkjtop .li1 .p2 a{font-size: 12px;color: #c81623;}
+.wmkj .wmkjtop .li1 img{height: 130px}
+.wmkj .wmkjtop li{float: left}
+.wmkj .wmkjtop .li2 .p1 span{font-size: 12px;color: #fff;background: #dd4957;padding:1px;}
+
+.wmkj .wmkjtop .li2{;padding-top:23px;width: 164px;height: 178px;background: url(../img/wm11.png) no-repeat #f7f7f7;border-right: 1px solid #ededed}
+.wmkj .wmkjtop .li2 .p1{margin-left: 46px;}
+.wmkj .wmkjtop .li2 .p1 a{font-size: 14px;color: #666;}
+.wmkj .wmkjtop .li2 .p2{margin-left: 26px;margin-top:11px;}
+.wmkj .wmkjtop .li2 .p2 a{font-size: 12px;color: #c81623;}
+.wmkj .wmkjtop .li2 img{height: 130px}
+.wmkj .wmkjtop .li3 .p1{margin-left: 44px;}
+
+.wmkj .wmkjbtn{width: 987px;height: 201px;border-bottom:1px solid #ededed;}
+.wmkj .wmkjbtn .li1{;padding-top:23px;width: 164px;height: 178px;background: url(../img/wm1.png) no-repeat;}
+.wmkj .wmkjbtn .li1 .p1{margin-left: 50px;}
+.wmkj .wmkjbtn .li1 .p1 a{font-size: 16px;color: #666;}
+.wmkj .wmkjbtn .li1 .p2{margin-left: 26px;margin-top:11px;}
+.wmkj .wmkjbtn .li1 .p2 a{font-size: 12px;color: #c81623;}
+.wmkj .wmkjbtn .li1 img{height: 130px}
+.wmkj .wmkjbtn li{float: left}
+.wmkj .wmkjbtn .li2 .p1 span{font-size: 12px;color: #fff;background: #dd4957;padding:1px;}
+
+.wmkj .wmkjbtn .li2{;padding-top:23px;width: 164px;height: 178px;background: url(../img/wm11.png) no-repeat #f7f7f7;border-right: 1px solid #ededed}
+.wmkj .wmkjbtn .li2 .p1{margin-left: 46px;}
+.wmkj .wmkjbtn .li2 .p1 a{font-size: 14px;color: #666;}
+.wmkj .wmkjbtn .li2 .p2{margin-left: 26px;margin-top:11px;}
+.wmkj .wmkjbtn .li2 .p2 a{font-size: 12px;color: #c81623;}
+.wmkj .wmkjbtn .li2 img{height: 130px}
+.wmkj .wmkjbtn .li3 .p1{margin-left: 44px;}
+
+.wmkj .wmkjbtn .li22{width: 163px;height: 164px;}
+.wmkj .wmkjbtn .li3{width: 327px;height:76px;background: url(../img/wmbt.png) no-repeat 92px 22px;}
+.wmkj .wmkjbtn .li3 .d21{margin-left: 0px;margin-top: 85px}
+.wmkj .wmkjbtn .li3 .d22 p a{font-size: 12px;color: #666}
+.wmkj .wmkjbtn .li3 .d22 p a span{font-size: 12px;color: #e11515}
+.wmkj .wmkjbtn .li3 .d22{margin-top: 77px;margin-left: 15px} 
+.wmkj .wmkjbtn .li3 .d22 p{line-height: 30px} 
+/*==================科技精品结束========================*/
+/*==================全款开售========================*/
+.wmqk{width: 960px;height: 110px;background: url(../img/wmred.png) no-repeat;margin:0 auto;margin-top: 25px;margin-bottom: 28px}
+.wmqk .wmbox{float: left;width: 263px;height: 85px;margin-left: 55px;margin-top: 10px}
+
+/*==================全款开售结束========================*/
+/*======================服装鞋包开始====================*/
+.wmfz{height: 670px;}
+.wmfz .pic{background: red;position: absolute}
+.wmfz .li1{height: 670px;position: relative;}
+.wmfz .father .fa{text-align: center;line-height: 33px;color: #666;;width: 57px;height: 33px;display: inline-block;border-top:3px solid #c81623;position: absolute;top: 0;left:369px;border-left:1px solid #c81623;border-right:1px solid #c81623;border-bottom: none;background: #fff;z-index: 2;}
+.wmfz .father .son{;width: 987px;height: 630px;border-top: 1px solid #c81623;border-bottom: 1px solid #ededed;position: absolute;top: 35px;left: 0}
+/*.wmfz .father:hover .son{display: block} */
+.wmfz .father .son .sontop .top1{width: 330px;height: 402px;background: url(../img/wmwm.jpg) no-repeat;padding-top: 250px}
+.wmfz .father .son .sontop .top1 .bzz{width: 330px;height: 225px;background:rgba(247,223,230,0.5);}
+.wmfz .father .son .sontop .top1 ul{width: 297px;height: 209px;position: absolute;top: 258px;left: 0}
+.wmfz .father .son .sontop .top1 ul li{float: left;}
+.wmfz .father .son .sontop .top1 .top13{width: 328px;height: 156px}
+.wmfz .father .son .sontop .top1 .top13 img{width: 328px;height: 156px}
+.wmfz .father .son .sontop .top1 ul span{background: url(../img/xb1.png) no-repeat;width: 26px;height: 26px;margin-left:15px;margin-top: 5px}
+.wmfz .father .son .sontop .top1 ul li a{font-size: 13px;color: #666;padding:10px 20px 10px 6px;}
+.wmfz .father .son .sontop .top1 ul .s2{background-position:0 -26px}
+.wmfz .father .son .sontop .top1 ul .s3{background-position:0 -52px}
+.wmfz .father .son .sontop .top1 ul .s4{background-position:0 -78px}
+.wmfz .father .son .sontop .top1 ul .s5{background-position:0 -104px}
+.wmfz .father .son .sontop .top1 ul .s6{background-position:0 -130px}
+.wmfz .father .son .sontop .top1 p{position: absolute;top: 367px;left: 20px;width: 264px;line-height: 24px}
+.wmfz .father .son .sontop .top1 p .a2{margin-left: 9px;margin-right: 9px;font-size: 12px;color: #666;}
+.wmfz .father .son .sontop .top1 p .a1{font-size: 12px;color: #d00000;}
+.wmfz .father .son .sontop .top1 .p2{position: absolute;top: 391px;left: 20px;}
+.wmfz .father .son .sontop .top1 .p3{position: absolute;top: 415px;left: 20px;}
+.wmfz .father .son .sontop .top1 .p4{position: absolute;top: 439px;left: 20px;}
+.wmfz .father .son .sontop .top2{width: 437px;height: 472px;}
+.wmfz .father .son .sontop .top2 img{border-bottom:1px solid #ededed;}
+.wmfz .father .son .sontop .top2 .wmw4{width: 436px;height: 157px}
+.wmfz .father .son .sonbtn ul li img{width: 219px;height: 157px}
+
+.wmfz .father .fa1{text-align: center;line-height: 33px;color: #666;width: 57px;height: 33px;display: inline-block;border:1px solid #ededed;position: absolute;top: 0;left:427px;background: #fff;z-index: 1;border-left: none;border-right: none;}
+.wmfz .father .fa2{text-align: center;line-height: 33px;color: #666;width: 57px;height: 33px;display: inline-block;border:1px solid #ededed;position: absolute;top: 0;left:488px;background: #fff;z-index: 1;border-left: none;border-right: none;}
+.wmfz .father .fa3{text-align: center;line-height: 33px;color: #666;width: 57px;height: 33px;display: inline-block;border:1px solid #ededed;position: absolute;top: 0;left:548px;background: #fff;z-index: 1;border-left: none;border-right: none;}
+.wmfz .father .fa4{text-align: center;line-height: 33px;color: #666;width: 57px;height: 33px;display: inline-block;border:1px solid #ededed;position: absolute;top: 0;left:609px;background: #fff;z-index: 1;border-left: none;border-right: none;}
+.wmfz .father .fa5{text-align: center;line-height: 33px;color: #666;width: 57px;height: 33px;display: inline-block;border:1px solid #ededed;position: absolute;top: 0;left:670px;background: #fff;z-index: 1;border-left: none;border-right: none;}
+.wmfz .father .fa6{text-align: center;line-height: 33px;color: #666;width: 57px;height: 33px;display: inline-block;border:1px solid #ededed;position: absolute;top: 0;left:730px;background: #fff;z-index: 1;border-left: none;border-right: none;}
+.wmfz .father .fa7{text-align: center;line-height: 33px;color: #666;width: 57px;height: 33px;display: inline-block;border:1px solid #ededed;position: absolute;top: 0;left:791px;background: #fff;z-index: 1;border-left: none;border-right: none;}
+.wmfz .father .fa8{text-align: center;line-height: 33px;color: #666;width: 57px;height: 33px;display: inline-block;border:1px solid #ededed;position: absolute;top: 0;left:851px;background: #fff;z-index: 1;border-left: none;border-right: none;}
+.wmfz .wang{position: relative;}
+
+.wmfz .li2{position: absolute;top: 0;left: 0;}
+.wmfz .wang .li2 .son1{display: none;width: 987px;height: 630px;border-top: 1px solid #c81623;border-bottom: 1px solid #ededed;position: absolute;top: 33px;left: 0;background: red}
+.wmfz .wang .li2:hover .son1{display: block}
+.wmfz .wang .li2 .father:hover a{border-top:3px solid #c81623;border-left: 2px solid #c81623;border-right: 2px solid #c81623;border-bottom:none;}
+.wmfz .li3{position: absolute;top: 0;left: 0;}
+.wmfz .wang .li3 .son2{display: none;width: 987px;height: 630px;border-top: 1px solid #c81623;border-bottom: 1px solid #ededed;position: absolute;top: 33px;left: 0;background: orange}
+.wmfz .wang .li3:hover .son2{display: block}
+.wmfz .wang .li3 .father:hover a{border-top:3px solid #c81623;border-left: 2px solid #c81623;border-right: 2px solid #c81623;border-bottom:none;}
+
+.wmfz .li4{position: absolute;top: 0;left: 0;}
+.wmfz .wang .li4 .son3{display: none;width: 987px;height: 630px;border-top: 1px solid #c81623;border-bottom: 1px solid #ededed;position: absolute;top: 33px;left: 0;background: #c81623}
+.wmfz .wang .li4:hover .son3{display: block}
+.wmfz .wang .li4 .father:hover a{border-top:3px solid #c81623;border-left: 2px solid #c81623;border-right: 2px solid #c81623;border-bottom:none;}
+
+.wmfz .li5{position: absolute;top: 0;left: 0;}
+.wmfz .wang .li5 .son4{display: none;width: 987px;height: 630px;border-top: 1px solid #c81623;border-bottom: 1px solid #ededed;position: absolute;top: 33px;left: 0;background: pink}
+.wmfz .wang .li5:hover .son4{display: block}
+.wmfz .wang .li5 .father:hover a{border-top:3px solid #c81623;border-left: 2px solid #c81623;border-right: 2px solid #c81623;border-bottom:none;}
+
+.wmfz .li6{position: absolute;top: 0;left: 0;}
+.wmfz .wang .li6 .son5{display: none;width: 987px;height: 630px;border-top: 1px solid #c81623;border-bottom: 1px solid #ededed;position: absolute;top: 33px;left: 0;background: green}
+.wmfz .wang .li6:hover .son5{display: block}
+.wmfz .wang .li6 .father:hover a{border-top:3px solid #c81623;border-left: 2px solid #c81623;border-right: 2px solid #c81623;border-bottom:none;}
+
+.wmfz .li7{position: absolute;top: 0;left: 0;}
+.wmfz .wang .li7 .son6{display: none;width: 987px;height: 630px;border-top: 1px solid #c81623;border-bottom: 1px solid #ededed;position: absolute;top: 33px;left: 0;background: purple}
+.wmfz .wang .li7:hover .son6{display: block}
+.wmfz .wang .li7 .father:hover a{border-top:3px solid #c81623;border-left: 2px solid #c81623;border-right: 2px solid #c81623;border-bottom:none;}
+
+.wmfz .li8{position: absolute;top: 0;left: 0;}
+.wmfz .wang .li8 .son7{display: none;width: 987px;height: 630px;border-top: 1px solid #c81623;border-bottom: 1px solid #ededed;position: absolute;top: 33px;left: 0;background: yellow}
+.wmfz .wang .li8:hover .son7{display: block}
+.wmfz .wang .li8 .father:hover a{border-top:3px solid #c81623;border-left: 2px solid #c81623;border-right: 2px solid #c81623;border-bottom:none;}
+
+.wmfz .li9{position: absolute;top: 0;left: 0;}
+.wmfz .wang .li9 .son8{display: none;width: 987px;height: 630px;border-top: 1px solid #c81623;border-bottom: 1px solid #ededed;position: absolute;top: 33px;left: 0;background: blue}
+.wmfz .wang .li9:hover .son8{display: block}
+.wmfz .wang .li9 .father:hover a{border-top:3px solid #c81623;border-left: 2px solid #c81623;border-right: 2px solid #c81623;border-bottom:none;}
+.wmgg ul li{float: left;margin-top: 10px;}
+.wmgg{width: 1000px;margin:0 auto;height:70px;margin-bottom: 20px}
+/*======================服装鞋包结束====================*/
+
+.wmgh{height: 470px;}
+.wmgh .pic{background: red;position: absolute}
+.wmgh .li1{height: 470px;position: relative;}
+.wmgh .father .fa{text-align: center;line-height: 33px;color: #666;;width: 57px;height: 33px;display: inline-block;border-top:3px solid #c81623;position: absolute;top: 0;left:369px;border-left:1px solid #c81623;border-right:1px solid #c81623;border-bottom: none;background: #fff;z-index: 2;}
+.wmgh .father .son{;width: 987px;height: 470px;border-top: 1px solid #c81623;border-bottom: 1px solid #ededed;position: absolute;top: 35px;left: 0}
+/*.wmfz .father:hover .son{display: block} */
+.wmgh .father .son .sontop .top1{width: 209px;height: 260px;background: url(../img/wmgh.png) no-repeat;padding-top: 240px}
+.wmgh .father .son .sontop .top1 .bzz{width: 209px;height: 90px;background:rgba(247,223,230,0.5);}
+.wmgh .father .son .sontop .top1 ul{width: 209px;height: 90px;position: absolute;top: 258px;left: 0}
+.wmgh .father .son .sontop .top1 ul li{float: left;}
+/*.wmgh .father .son .sontop .top1 .top13{width: 328px;height: 156px}
+.wmgh .father .son .sontop .top1 .top13 img{width: 328px;height: 156px}*/
+.wmgh .father .son .sontop .top1 ul span{background: url(../img/xb2.png) no-repeat;width: 26px;height: 26px;margin-left:15px;margin-top: 5px}
+.wmgh .father .son .sontop .top1 ul li a{font-size: 13px;color: #666;padding:10px 00px 10px 6px;}
+.wmgh .father .son .sontop .top1 ul .s2{background-position:0 -26px}
+.wmgh .father .son .sontop .top1 ul .s3{background-position:0 -52px}
+.wmgh .father .son .sontop .top1 ul .s4{background-position:0 -78px}
+.wmgh .father .son .sontop .top1 ul .s5{background-position:0 -104px}
+.wmgh .father .son .sontop .top1 ul .s6{background-position:0 -130px}
+.wmgh .father .son .sontop .top1 p{position: absolute;top: 367px;left: 20px;width: 264px;line-height: 24px}
+.wmgh .father .son .sontop .top1 p .a2{margin-left: 9px;margin-right: 9px;font-size: 12px;color: #666;}
+.wmgh .father .son .sontop .top1 p .a1{font-size: 12px;color: #d00000;}
+.wmgh .father .son .sontop .top1 .p2{position: absolute;top: 391px;left: 20px;}
+.wmgh .father .son .sontop .top1 .p3{position: absolute;top: 415px;left: 20px;}
+.wmgh .father .son .sontop .top1 .p4{position: absolute;top: 439px;left: 20px;}
+.wmgh .father .son .sontop .top2{width: 341px;height: 472px;}
+.wmgh .father .son .sontop .top2 img{border-bottom:1px solid #ededed;}
+.wmgh .father .son .sontop .top2 .pic3{width: 337px;height: 177px}
+.wmgh .father .son .sontop .top2 .wmw4{width: 436px;height: 157px}
+.wmgh .father .son .sonbtn ul li .pic1{width: 218px;height: 299px}
+.wmgh .father .son .sonbtn ul li .pic2{width: 218px;height: 176px}
+.wmgh .father .son .sonbtn div .pic1{width: 218px;height: 299px}
+.wmgh .father .son .sonbtn div .pic2{width: 218px;height: 176px}
+
+.wmgh .father .fa1{text-align: center;line-height: 33px;color: #666;width: 57px;height: 33px;display: inline-block;border:1px solid #ededed;position: absolute;top: 0;left:426px;background: #fff;z-index: 1;border-left: none;border-right: none;}
+.wmgh .father .fa2{text-align: center;line-height: 33px;color: #666;width: 57px;height: 33px;display: inline-block;border:1px solid #ededed;position: absolute;top: 0;left:483px;background: #fff;z-index: 1;border-left: none;border-right: none;}
+.wmgh .father .fa3{text-align: center;line-height: 33px;color: #666;width: 57px;height: 33px;display: inline-block;border:1px solid #ededed;position: absolute;top: 0;left:540px;background: #fff;z-index: 1;border-left: none;border-right: none;}
+.wmgh .father .fa4{text-align: center;line-height: 33px;color: #666;width: 57px;height: 33px;display: inline-block;border:1px solid #ededed;position: absolute;top: 0;left:597px;background: #fff;z-index: 1;border-left: none;border-right: none;}
+.wmgh .father .fa5{text-align: center;line-height: 33px;color: #666;width: 57px;height: 33px;display: inline-block;border:1px solid #ededed;position: absolute;top: 0;left:654px;background: #fff;z-index: 1;border-left: none;border-right: none;}
+.wmgh .father .fa6{text-align: center;line-height: 33px;color: #666;width: 57px;height: 33px;display: inline-block;border:1px solid #ededed;position: absolute;top: 0;left:711px;background: #fff;z-index: 1;border-left: none;border-right: none;}
+.wmgh .father .fa7{text-align: center;line-height: 33px;color: #666;width: 57px;height: 33px;display: inline-block;border:1px solid #ededed;position: absolute;top: 0;left:768px;background: #fff;z-index: 1;border-left: none;border-right: none;}
+.wmgh .father .fa8{text-align: center;line-height: 33px;color: #666;width: 57px;height: 33px;display: inline-block;border:1px solid #ededed;position: absolute;top: 0;left:825px;background: #fff;z-index: 1;border-left: none;border-right: none;}
+.wmgh .wang{position: relative;}
+
+.wmgh .li2{position: absolute;top: 0;left: 0;}
+.wmgh .wang .li2 .son1{display: none;width: 987px;height: 630px;border-top: 1px solid #c81623;border-bottom: 1px solid #ededed;position: absolute;top: 33px;left: 0;background: red}
+.wmgh .wang .li2:hover .son1{display: block}
+.wmgh .wang .li2 .father:hover a{border-top:3px solid #c81623;border-left: 2px solid #c81623;border-right: 2px solid #c81623;border-bottom:none;}
+.wmgh .li3{position: absolute;top: 0;left: 0;}
+.wmgh .wang .li3 .son2{display: none;width: 987px;height: 630px;border-top: 1px solid #c81623;border-bottom: 1px solid #ededed;position: absolute;top: 33px;left: 0;background: orange}
+.wmgh .wang .li3:hover .son2{display: block}
+.wmgh .wang .li3 .father:hover a{border-top:3px solid #c81623;border-left: 2px solid #c81623;border-right: 2px solid #c81623;border-bottom:none;}
+
+.wmgh .li4{position: absolute;top: 0;left: 0;}
+.wmgh .wang .li4 .son3{display: none;width: 987px;height: 630px;border-top: 1px solid #c81623;border-bottom: 1px solid #ededed;position: absolute;top: 33px;left: 0;background: #c81623}
+.wmgh .wang .li4:hover .son3{display: block}
+.wmgh .wang .li4 .father:hover a{border-top:3px solid #c81623;border-left: 2px solid #c81623;border-right: 2px solid #c81623;border-bottom:none;}
+
+.wmgh .li5{position: absolute;top: 0;left: 0;}
+.wmgh .wang .li5 .son4{display: none;width: 987px;height: 630px;border-top: 1px solid #c81623;border-bottom: 1px solid #ededed;position: absolute;top: 33px;left: 0;background: pink}
+.wmgh .wang .li5:hover .son4{display: block}
+.wmgh .wang .li5 .father:hover a{border-top:3px solid #c81623;border-left: 2px solid #c81623;border-right: 2px solid #c81623;border-bottom:none;}
+
+.wmgh .li6{position: absolute;top: 0;left: 0;}
+.wmgh .wang .li6 .son5{display: none;width: 987px;height: 630px;border-top: 1px solid #c81623;border-bottom: 1px solid #ededed;position: absolute;top: 33px;left: 0;background: green}
+.wmgh .wang .li6:hover .son5{display: block}
+.wmgh .wang .li6 .father:hover a{border-top:3px solid #c81623;border-left: 2px solid #c81623;border-right: 2px solid #c81623;border-bottom:none;}
+
+.wmgh .li7{position: absolute;top: 0;left: 0;}
+.wmgh .wang .li7 .son6{display: none;width: 987px;height: 630px;border-top: 1px solid #c81623;border-bottom: 1px solid #ededed;position: absolute;top: 33px;left: 0;background: purple}
+.wmgh .wang .li7:hover .son6{display: block}
+.wmgh .wang .li7 .father:hover a{border-top:3px solid #c81623;border-left: 2px solid #c81623;border-right: 2px solid #c81623;border-bottom:none;}
+
+.wmgh .li8{position: absolute;top: 0;left: 0;}
+.wmgh .wang .li8 .son7{display: none;width: 987px;height: 630px;border-top: 1px solid #c81623;border-bottom: 1px solid #ededed;position: absolute;top: 33px;left: 0;background: yellow}
+.wmgh .wang .li8:hover .son7{display: block}
+.wmgh .wang .li8 .father:hover a{border-top:3px solid #c81623;border-left: 2px solid #c81623;border-right: 2px solid #c81623;border-bottom:none;}
+
+.wmgh.li9{position: absolute;top: 0;left: 0;}
+.wmgh .wang .li9 .son8{display: none;width: 987px;height: 630px;border-top: 1px solid #c81623;border-bottom: 1px solid #ededed;position: absolute;top: 33px;left: 0;background: blue}
+.wmgh .wang .li9:hover .son8{display: block}
+.wmgh .wang .li9 .father:hover a{border-top:3px solid #c81623;border-left: 2px solid #c81623;border-right: 2px solid #c81623;border-bottom:none;}
+.wmggg ul li{float: left;margin-top: 50px;}
+.wmggg{width: 1000px;margin:0 auto;height:70px;margin-bottom: 20px}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

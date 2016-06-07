@@ -2,119 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>个人网站</title>
-<style>
-	*{margin: 0;padding: 0;list-style: none;}
-	html,body{width: 100%;height: 100%;background: url(img/6.jpg);background-size: 100% 100%;overflow: hidden;}
-	#werp{ width:100%;margin: 10px auto;}
-
-	.werp_l{width:13.3%;height: 100%;background: url(img/0.jpg) no-repeat;background-size: 100% 100%;position: fixed;left: 0;top: 0; }
-	.werp_r{width:13.3%;height: 100%;background: url(img/0.jpg) no-repeat;background-size: 100% 100%;position: fixed;right: 0;top: 0; }
-
-	#header{width: 1000px;height: 50px;margin: 0px auto;position: fixed;left: 50%;top:15px;margin-left: -500px;z-index: 99;border: 1px solid #dfe710;box-shadow: 0 0 10px 5px #dfe710;overflow: hidden;}
-	#header input{float: left;width: 25%; height: 50px;font-size: 20px;text-align: center;line-height: 50px;font-weight: bold;background: url(img/4.png) no-repeat #ffc7a0;background-size: 99% 90%;opacity: .9;border-radius: 20px;}
-	#header li{width: 25%;height: 50px;background:#dfe710;position:absolute; left: 0;top: 0;opacity:.5;border-radius: 20px; }
-
-	#box{width: 1000px;position: relative;left: 50%;top:65px;margin-left: -500px;}
-	/*#box div{display: none;}*/
-	.home,.resume,.works,.production{width: 1000px;height: 665px;border: 1px solid #dfe710;box-shadow: 0 0 10px 5px #dfe710;}
-	
-	.home img{width: 100%;height: 590px;}
-	.verse{width: 470px;height: 400px;position: absolute;left: 240px;top:50px; }
-	.verse li{width: 40px;height: 260px;margin: 5px;float: left;border: 1px solid #ccc;box-shadow: 0 0 25px 10px #827979;text-align: center;}
-	.verse li span{color:#827979; font-weight: bold; font-size: 30px; transition:1s all linear;text-shadow:0px 0px 50px #827979;opacity: 0;line-height: 30px;}
-	.verse li span.on{text-shadow:0px 0px 0px #827979;opacity: 1;}
-	.feel{width: 470px;height: 165px;position: absolute;left: 230px;top:370px;color:#827979; font-weight: bold;font-size: 15px;}
-
-	.resume{width: 1000px;height: 665px}
-	
-	.works{background:rgba(17,193,225,.5);}
-	
-	.production{width: 1000px;height: 665px}
-	.works_box{width: 100%;height: 590px;}
-	.works_box_ul{width:95%;height: 80%;margin-left:2.5%; }
-	.works_box_ul li{width: 200px;height:200px;float: left;background: blue;margin: 11px 14px;position: relative; overflow: hidden;border: 2px solid #11e129;box-shadow: 0 0 10px 5px #11e129;}
-	.works_box_ul li img{width: 200px;height: 200px;}
-	.works_box_ul li span{width: 200px;height: 200px;font-size: 30px;text-align: center;line-height: 200px;background:#dfe710;opacity: .5;position: absolute;left: -200px;top:0; }
-	.works_box_ol{width: 30%;height: 10%;position: relative;left: 50%;top: 3%; margin-left: -15%;}
-	.works_box_ol li{float: left;width:50px;height: 50px;margin-right: 23px;margin-bottom: 5px; background: #11e129;border-radius: 50%;font-size: 30px;text-align: center;line-height: 50px;cursor: pointer;border: 1px solid #11e129;box-shadow: 0 0 10px 5px #11e129;}
-
-
-</style>
-<script type="text/javascript" src="canvas.js"></script>
-<script type="text/javascript" src="elastic.js"></script>
-<script type="text/javascript">
-	function rnd(n,m){
-		return parseInt(Math.random()*(m-n))+n;	
-	};
-	function d2a(n){
-		return n*Math.PI/180;
-	};
-	function toDou(n){
-        return n<10?'0'+n:''+n;
-    };
-	window.onload=function(){
-		function Box(){
-			var aBtn=document.querySelectorAll('input');
-			var oFly=document.querySelector('li');
-			var oBox=document.querySelector('#box');
-			var oHome=document.querySelector('.home');
-			var oH=oHome.offsetHeight;
-			for(var i=0;i<aBtn.length;i++){
-	     		;(function(index){
-	     			aBtn[i].onclick=function(){  
-	     				elastic(oFly,this.offsetLeft);			
-	          			for(var i=0;i<aBtn.length;i++){
-	          				
-	          				oBox.style.top=-(oH*i-65)+'px'; 
-	          			}
-	     			
-	     			oBox.style.top=-(oH*index-65)+'px';
-	     		     }
-	     		})(i);
-	     	}
-
-		}
-		
-		
-		C2();
-		C1();
-		Home();
-		Box();
-		function Home(){
-			var aLi=document.querySelectorAll('.verse li')
-			var arr=['秋风瑟瑟百花愁 ，','唯有明月挂枝头 。','青衫寒剑坐独亭 ，','浊酒一杯醉心扉 。','举杯望月寒如雪 ，','低头抚剑望解忧 。','寄月空传相思苦 ，','明月千里传思情 。','| 月思'];
-			
-
-			function add(obj,arr){
-				for (var i = 0; i < arr.length; i++) {
-					var oSpan=document.createElement("span");
-					oSpan.innerHTML=arr[i];
-					obj.appendChild(oSpan);
-				};
-				var count=0;
-				var aSpan=obj.children;
-				var timer=setInterval(function(){
-					aSpan[count].className="on";
-					count++;
-					if(count==arr.length){
-						clearInterval(timer);
-					};
-				},100)
-			};
-			var iNow=0;
-			var timer=setInterval(function(){
-				add(aLi[iNow],arr[iNow])
-				iNow++;
-				if(iNow==aLi.length){
-					clearInterval(timer);
-				};
-			},1000)
-
-		}
-		
-	};	
-</script>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
 <div id="werp">
@@ -160,11 +50,40 @@
 			</ul>
 		</div>
 		<div class="resume">
+			<div class="resume_t">
+				<ul class="resume_l">
+					<h3>个人资料</h3>
+					<li>姓&nbsp;&nbsp;名：周亚军</li>
+					<li>性&nbsp;&nbsp;别：男</li>
+					<li>年&nbsp;&nbsp;龄：24</li>
+					<li>学&nbsp;&nbsp;历：大专</li>
+					<li>移动电话：189-7084-0718</li>
+					<li>邮&nbsp;&nbsp;箱：Feng_jiyiliushi@163.com<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1029786605@qq.com</li>
+				</ul>
+				<ul class="resume_r">
+					<h3>职业技能</h3>
+					<li>1.	熟练使用HTML/CSS进行PC端的开发，运用HTML5/CSS3进行移动端响应式布局开发，能够手写符合w3c标准的web页面，能够兼容主流浏览器，并且还原设计图，以及能够对网站进行二次重构。</li>
+					<li>2.	熟练使用原生JavaScript，可以使用原生JS制作各种特效，熟悉DOM结构。</li>
+					<li>3.	熟练使用JQuery库进行PC网站的快速开发，Zepto库进行移动端开发。</li>
+					<li>4.	熟悉使用Ajax交互和Jsonp跨域交互，并能用原生JS编写自己的Ajax和Jsonp函数</li>
+					<li>5.	熟练使用Dreamweaver、Sublime Text、photoshop;</li>
+					<li>6.	熟悉对Css/JavaScript性能优化、可解决多浏览器兼容性问题。</li>
+					<li>7.	熟练使用SVN和Git控制工具进行团队开发。</li>
+					<li>8.	了解前端面向对象思想，Seajs和Requirejs，Angularjs并进行简单的模块化开发。</li>
+				</ul>
+			</div>
+			<div class="resume_b">
+				<h3>自我评价</h3>
+				<p>
+					有前端开发经验，能熟练使用JS制作各种特效，能够使用JQ/ZP进行PC端与移动端开发，能解决各浏览器的兼容性、网页性能优化等问题，对面向对象思想有一定了解，能使用Seajs/Requirejs/Angularjs进行简单模块化开发，能够使用SVN和Git控制工具进行团队开发，善于总结、思考解决问题的各种方法和思路，适应能力强能很快的适应新环境。
+				</p>
+			</div>
 			
 		</div>
 		<div class="works"  >
 			<section class='works_box'>
-				<ul class='works_box_ul'>
+				<ul class='works_box_ul worker_cile' style="display:block">
 					<li>
 						<a href="branch/beckon.html" target="_blank"><img src="img/b2.jpg" alt=""></a>
 						<span>爆炸效果</span>
@@ -174,7 +93,7 @@
 						<span>翻页相册</span>
 					</li>
 					<li>
-						<a href="branch/pubu.html" target="_blank"><img src="" alt=""></a>
+						<a href="branch/pubu.html" target="_blank"><img src="png/1.png" alt=""></a>
 						<span>无限加载</span>
 					</li>
 					<li>
@@ -182,24 +101,127 @@
 						<span>延迟加载</span>
 					</li>
 					<li>
-						<a href="branch/beckon.html" target="_blank"><img src="" alt=""></a>
-						<span>爆炸效果</span>
+						<a href="branch/1.html" target="_blank"><img src="png/0.jpg" alt=""></a>
+						<span>分块运动</span>
 					</li>
 					<li>
-						<a href="branch/beckon.html" target="_blank"><img src="" alt=""></a>
-						<span>爆炸效果</span>
+						<a href="branch/2.html" target="_blank"><img src="png/0.png" alt=""></a>
+						<span>分页效果</span>
 					</li>
 					<li>
-						<a href="branch/beckon.html" target="_blank"><img src="" alt=""></a>
-						<span>爆炸效果</span>
+						<a href="branch/3.html" target="_blank"><img src="png/1.jpg" alt=""></a>
+						<span>苹果菜单</span>
 					</li>
 					<li>
-						<a href="branch/beckon.html" target="_blank"><img src="" alt=""></a>
-						<span>爆炸效果</span>
+						<a href="branch/4.html" target="_blank"><img src="png/2.png" alt=""></a>
+						<span>幻灯片</span>
+					</li>
+				</ul>
+				<ul class='works_box_ul2 worker_cile'>
+					<li>
+						<a href="branch/6.html" target="_blank"><img src="img/img2.jpg" alt=""></a>
+						<span>轮播图</span>
+					</li>
+					<li>
+						<a href="branch/5.html" target="_blank"><img src="png/3.png" alt=""></a>
+						<span>圆运动</span>
+					</li>
+					<li>
+						<a href="branch/7.html" target="_blank"><img src="png/4.png" alt=""></a>
+						<span>跟随改变</span>
+					</li>
+					<li>
+						<a href="branch/8.html"><img src="img/5.jpg" alt=""></a>
+						<span>吸顶条</span>
+					</li>
+					<li>
+						<a href="branch/9.html" target="_blank"><img src="png/img8.jpg" alt=""></a>
+						<span>放大镜</span>
+					</li>
+					<li>
+						<a href="branch/10.html" target="_blank"><img src="png/6.png" alt=""></a>
+						<span>九宫格拖拽</span>
+					</li>
+					<li>
+						<a href="branch/11.html" target="_blank"><img src="png/7.png" alt=""></a>
+						<span>变换九宫格</span>
+					</li>
+					<li>
+						<a href="branch/12.html" target="_blank"><img src="png/8.png" alt=""></a>
+						<span>左右运动</span>
+					</li>
+				</ul>
+				<ul class='works_box_ul3 worker_cile'>
+					<li>
+						<a href="branch/13.html" target="_blank"><img src="png/9.png" alt=""></a>
+						<span>手风琴</span>
+					</li>
+					<li>
+						<a href="branch/14.html" target="_blank"><img src="png/3.jpg" alt=""></a>
+						<span>无缝滚动</span>
+					</li>
+					<li>
+						<a href="branch/15.html" target="_blank"><img src="png/4.jpg" alt=""></a>
+						<span>穿墙运动</span>
+					</li>
+					<li>
+						<a href="branch/Ajax/1.html"><img src="png/10.png" alt=""></a>
+						<span>Ajax</span>
+					</li>
+					<li>
+						<a href="branch/JQ/1.html" target="_blank"><img src="png/11.png" alt=""></a>
+						<span>JQ</span>
+					</li>
+					<li>
+						<a href="branch/seajs/baidu.html" target="_blank"><img src="png/img9.jpg" alt=""></a>
+						<span>seajsMVC</span>
+					</li>
+					<li>
+						<a href="branch/MXDX/1.html" target="_blank"><img src="png/img6.jpg" alt=""></a>
+						<span>面向对象</span>
+					</li>
+					<li>
+						<a href="branch/16.html" target="_blank"><img src="png/12.png" alt=""></a>
+						<span>扔皮球</span>
+					</li>
+				</ul>
+
+				<ul class='works_box_ul4 worker_cile'>
+					<li>
+						<a href="branch/jd/jd.html" target="_blank"><img src="png/13.png" alt=""></a>
+						<span>京东首页</span>
+					</li>
+					<li>
+						<a href="branch/mls/mls.html" target="_blank"><img src="png/14.png" alt=""></a>
+						<span>美丽说</span>
+					</li>
+					<li>
+						<a href="branch/oppo/oppo.html" target="_blank"><img src="png/16.png" alt=""></a>
+						<span>OPPO</span>
+					</li>
+					<li>
+						<a href="branch/mnls/mnls.html"><img src="png/15.png" alt=""></a>
+						<span>蒙娜丽莎</span>
+					</li>
+					<li>
+						<a href="branch/xm/xiaomi.html" target="_blank"><img src="png/17.png" alt=""></a>
+						<span>小米</span>
+					</li>
+					<li>
+						<a href="branch/yidong/meta.html" target="_blank"><img src="png/18.png" alt=""></a>
+						<span>手机端模拟</span>
+					</li>
+					<li>
+						<a href="branch/yidong/guokr.html" target="_blank"><img src="png/19.png" alt=""></a>
+						<span>Guokr</span>
+					</li>
+					<li>
+						<a href="branch/yidong/HEXAGONE.html" target="_blank"><img src="png/20.png" alt=""></a>
+						<span>HEXAGONE</span>
 					</li>
 				</ul>
 				<ol class="works_box_ol">
-					<li>1</li>
+					<li class="on">1</li>
 					<li>2</li>
 					<li>3</li>
 					<li>4</li>
@@ -210,12 +232,36 @@
 			
 		</div>
 		<div class="production" >
+			<section class="production_t">
+				<li><a href="branch/H5/buyu.html"><img src="png/23.png" alt=""></a>
+					<span>
+						用面向对象的模式在canvas绘画出游戏效果。
+					</span>
+
+				</li>
+				<li><a href="branch/H5/3D.html"><img src="png/22.png" alt=""></a>
+					<span>
+					用H5与C3布出视觉效果，用JS创建DOM标签方式，鼠标键盘操作运动效果。
+					</span>
+				</li>
+			</section>
+			<section class="production_b">
+				<li><a href="branch/H5/wang.html"><img src="png/21.png" alt=""></a>
+					<span>
+						用JS在canvas绘画出视觉动态效果。
+					</span>
+
+				</li>
+			</section>
 			
 		</div>
 		
 	</div>
 	
-</div>	
+</div>
+<script type="text/javascript" src="js/canvas.js"></script>
+<script type="text/javascript" src="js/elastic.js"></script>
+<script type="text/javascript" src="js/index.js"></script>	
 </body>
 
 </html>

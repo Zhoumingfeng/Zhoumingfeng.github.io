@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>跟随改变</title>
+	<style>
+*{ margin:0; padding:0; list-style:none;}
+li{height:150px; float:left; font-size:25px; text-align:center; line-height:150px;}
+</style>
+<script>
+window.onload=function(){
+	var aLi=document.getElementsByTagName('li');
+	
+		var oBody=(document.documentElement.clientWidth);
+		for(var i=0;i<aLi.length;i++){
+			aLi[i].style.width=oBody/9+'px';
+			if(oBody<1100&&oBody>900){
+				aLi[i].style.width=oBody/6+'px';
+			}else if(oBody<900&&oBody>600){
+				aLi[i].style.width=oBody/4+'px';
+			}else if(oBody<600&&oBody>300){
+				aLi[i].style.width=oBody/3+'px';
+			}else if(oBody<300){
+				aLi[i].style.width=oBody/2+'px';
+			}
+		}
+	
+};
+
+</script>
+</head>
+
+<body>
+<li style="background:#C00">1</li>
+<li style="background:#C93">2</li>
+<li style="background:#C05">3</li>
+<li style="background:#0C0">4</li>
+<li style="background:#6CC">5</li>
+<li style="background:#08C">6</li>
+<li style="background:#F06">7</li>
+<li style="background:#F06">8</li>
+<li style="background:#C09">9</li>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面向对象</title>
+    <style>
+        *{ marign:0; padding:0;list-style: none;}
+        #box,#box2{ width:300px; margin:20px auto;}
+        #box div,#box2 div{ width:300px; height:360px;display:none;}
+        #box div li img,#box2 div li img{width: 300px;height: 360px;}
+        input.ac{ background:sandybrown; color:#fff;}
+    </style>
+    <script src="tab.js"></script>
+    <script>
+        function AutoTab(id){
+            Silder.call(this,id);
+            this.timer=null;
+            this.fnInit();
+        }
+        AutoTab.prototype=new Silder();
+        AutoTab.prototype.constructor=AutoTab;
+        AutoTab.prototype.next=function(){
+            this.index++;
+            if(this.index==this.aBtn.length){
+                this.index=0;
+            }
+            this.fnClick();
+        };
+        AutoTab.prototype.Auto=function(){
+            var _this=this;
+            this.timer=setInterval(function(){
+                _this.next();
+            },1000);
+        };
+        AutoTab.prototype.fnInit=function(){
+            var _this=this;
+            this.oBox.onmouseover=function(){
+                _this.fnOver();
+            };
+            this.oBox.onmouseout=function(){
+                _this.fnOut();
+            };
+            this.Auto();
+        };
+        AutoTab.prototype.fnOver=function(){
+            clearInterval(this.timer);
+        };
+        AutoTab.prototype.fnOut=function(){
+            this.Auto();
+        };
+        window.onload=function(){
+            new Silder('box');
+            new AutoTab('box2');
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <input class="ac" type="button" value="按钮一">
+        <input type="button" value="按钮二">
+        <input type="button" value="按钮三">
+        <div style="display:block"><li><img src="img1.jpg" alt=""></li></div>
+        <div><li><img src="img2.jpg" alt=""></li></div>
+        <div><li><img src="img3.jpg" alt=""></li></div>
+    </div>
+    <div id="box2">
+        <input class="ac" type="button" value="按钮一">
+        <input type="button" value="按钮二">
+        <input type="button" value="按钮三">
+        <div style="display:block"><li><img src="img1.jpg" alt=""></li></div>
+        <div><li><img src="img2.jpg" alt=""></li></div>
+        <div><li><img src="img3.jpg" alt=""></li></div>
+    </div>
+</body>
+</html>

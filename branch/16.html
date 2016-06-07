@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+    body{background: #000;}
+    #div1{width: 150px;height: 150px;background: #fff;position: absolute;border-radius: 50%;box-shadow: 0px 0px 20px 10px #fff;font-size: 20px;text-align: center;line-height: 150px;color: red;cursor: pointer;}
+	</style>
+	
+	<script type="text/javascript">
+    window.onload=function(){
+        var oDiv=document.getElementById('div1');
+        var lasitX=0;
+        var lasitY=0;
+        var spendX=0;
+        var spendY=0;
+
+        oDiv.onmousedown=function(ev){
+            var oEvent=ev||event;
+            var disX=oEvent.clientX-oDiv.offsetLeft;
+            var disY=oEvent.clientY-oDiv.offsetTop;
+            document.onmousemove=function(ev){
+                var oEvent=ev||event;
+                var l=oEvent.clientX-disX;
+                var t=oEvent.clientY-disY;
+                oDiv.style.left=l+'px';
+                oDiv.style.top=t+'px';
+
+                spendX=oEvent.clientX-lasitX;
+                spendY=oEvent.clientY-lasitY;
+                lasitX=oEvent.clientX;
+                lasitY=oEvent.clientY;
+            }
+            document.onmouseup=function(){
+                document.onmousemove=null;
+                document.onmouseup=null;
+                crash();
+            }
+            return false;
+        }
+
+        function crash(){
+            var timer=null;
+            
+            timer=setInterval(function(){
+                spendY+=3;
+                var l=spendX+oDiv.offsetLeft;
+                var t=spendY+oDiv.offsetTop;
+                if(l>=document.documentElement.clientWidth-oDiv.offsetWidth){
+                    l=document.documentElement.clientWidth-oDiv.offsetWidth;
+                    spendX*=-.8;
+                    spendY*=.8;
+                }
+                if(l<=0){
+                    l=0;
+                   spendX*=-.8;
+                   spendY*=.8;
+                }
+                if(t>=document.documentElement.clientHeight-oDiv.offsetHeight){
+                    t=document.documentElement.clientHeight-oDiv.offsetHeight; 
+                   spendY*=-.8;
+                   spendX*=.8;
+                }
+                if(t<=0){
+                    t=0; 
+                   spendY*=-.8;
+                   spendX*=.8;  
+                }
+                if(Math.abs(spendY)<1){spendY=0;
+                }
+                if(Math.abs(spendX)<1){spendX=0;
+                }
+                if(spendX==0 && spendY==0 && t==document.documentElement.clientHeight-oDiv.offsetHeight){
+                    clearInterval(timer);
+                }
+
+                oDiv.style.left=l+'px';
+                oDiv.style.top=t+'px';
+                console.log(1);
+
+            },30);
+        }
+       
+    }
+   
+	</script>
+
+</head>
+<body>
+
+<div id="div1"><span>按住甩出</span></div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分页效果</title>
+    <style>
+        *{ marign:0; padding:0; list-style:none;}
+        #box{ width:300px; margin:100px auto;}
+        #box ul li{ font-size:20px; font-family:"微软雅黑"; color:#fff; text-align:center; line-height:90px; width:90px; height:90px; margin:0 10px 10px 0; float:left; background:#ccc;}
+    </style>
+    <script src="move2.js"></script>
+    <script>
+        function rnd(n,m){
+            return parseInt(Math.random()*(m-n)+n);
+        }
+        window.onload=function(){
+            var oBox=document.getElementById('box');
+            var aCon=oBox.children[0].children;
+            var arr=[];
+
+            for(var i=0;i<aCon.length;i++){
+                arr.push({left:aCon[i].offsetLeft,top:aCon[i].offsetTop});
+            }
+
+            for(var i=0;i<aCon.length;i++){
+                aCon[i].style.position='absolute';
+                aCon[i].style.left=arr[i].left+'px';
+                aCon[i].style.top=arr[i].top+'px';
+                aCon[i].style.margin=0;
+                aCon[i].style.background='rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';
+                aCon[i].innerHTML=i+1;
+            }
+            var timer=null;
+            var bSys=true;
+            document.onclick=function(){
+                if(!bSys)return;
+                bSys=false;
+                clearInterval(timer);
+                var iNow=0;
+                timer=setInterval(function(){
+                    ;(function(index){
+                        move(aCon[iNow],{width:0,height:0,left:-100,top:0},{time:500,end:function(){
+                            setTimeout(function(){
+                                if(iNow==aCon.length){
+                                    iNow=aCon.length-1;
+
+                                    timer=setInterval(function(){
+
+                                        move(aCon[iNow],{left:arr[iNow].left,top:arr[iNow].top,width:90,height:90});
+                                        iNow--;
+                                        if(iNow==-1){
+                                            clearInterval(timer);
+                                            bSys=true;
+                                        }
+                                    },200);
+                                }
+                            },800);
+                        }})
+                    })(iNow);
+
+                    iNow++;
+
+                    if(iNow==aCon.length){
+                        clearInterval(timer);
+                    }
+                },100)
+            };
+        };
+    </script>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+</body>
+</html>
