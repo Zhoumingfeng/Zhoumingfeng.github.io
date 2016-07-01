@@ -25,18 +25,18 @@ DOMReady(function(){
 		var aBtn=document.querySelectorAll('input');
 		var oFly=document.querySelector('li');
 		var oBox=document.querySelector('#box');
-		var oHome=document.querySelector('.home');
-		var oH=oHome.offsetHeight;
+		var aDiv=oBox.querySelectorAll('div');
+		
 		for(var i=0;i<aBtn.length;i++){
      		;(function(index){
      			aBtn[i].onclick=function(){  
      				elastic(oFly,this.offsetLeft);			
           			for(var i=0;i<aBtn.length;i++){
           				
-          				oBox.style.top=-(oH*i-65)+'px'; 
+          				aDiv[i].style.display='none'; 
           			}
      			
-     			oBox.style.top=-(oH*index-65)+'px';
+     			aDiv[index].style.display='block';
      		     }
      		})(i);
      	}
