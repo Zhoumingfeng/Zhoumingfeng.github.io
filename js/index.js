@@ -44,8 +44,8 @@ DOMReady(function(){
 	}
 	
 	
-	// C2();
-	// C1();
+	C2();
+	C1();
 	Home();
 	Box();
 	function Home(){
