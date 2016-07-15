@@ -25,7 +25,7 @@ function echo_str($str){
 	}	
 }
 
-$link=@mysql_connect('localhost','root','') or mysql_connect('localhost','root','admin');
+$link=@mysql_connect('localhost','root','') or mysql_connect('localhost','root','rootroot');
 mysql_query("set names 'utf8'");
 mysql_query('CREATE database zns_wish');
 mysql_select_db('zns_wish');
